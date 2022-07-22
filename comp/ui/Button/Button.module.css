@@ -1,0 +1,50 @@
+.root {
+    transition: all .3s ease-in-out;
+    height: 50px;
+    padding: 0 46px;
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+.root svg {
+    height: 18px;
+    width: 18px;
+  }
+.primary {
+    color: white;
+    background-color: var(--primary);
+}
+.primary:hover{
+    background-color: var(--primary-hover);
+}
+
+.ghost {
+    background-color: var(--primary);
+    color: white;
+}
+.ghost:hover{
+    background-color: white;
+    color: var(--primary);
+}
+
+.secondary {
+    background-color: white;
+    color: black;
+}
+.secondary:hover{
+    background-color: var(--primary);
+    color:white;
+    opacity: .8;
+}
+
+.custom{
+    background: #f8dc68;
+    color: black;
+}
+.custom:hover{
+    background: #dfc65d;
+}
+

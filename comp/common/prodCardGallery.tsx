@@ -1,0 +1,19 @@
+import Image from "next/image";
+const ProdCardGallery = ({ prod, selectProd, setSelectedProd }) => {
+  return (
+    <div
+      style={{
+        outline: selectProd === prod.url ? "2px solid var(--primary)" : null,
+      }}
+      onClick={() => {
+        setSelectedProd(prod.url);
+      }}
+      key={prod.id}
+      className="relative hover:outline-2 hover:outline hover:outline-blue-300  cursor-pointer h-10 w-10 rounded-md overflow-hidden"
+    >
+      <Image loading="lazy" src={prod?.url} layout="fill" objectFit="cover" />
+    </div>
+  );
+};
+
+export default ProdCardGallery;

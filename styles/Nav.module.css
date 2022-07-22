@@ -1,0 +1,14 @@
+.right svg:hover {
+  color: var(--primary-hover);
+  cursor: pointer;
+}
+.right svg {
+    height: 20px;
+    width: 20px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}

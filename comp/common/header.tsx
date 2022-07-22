@@ -1,0 +1,32 @@
+import React from "react";
+
+interface Props {
+  title: string;
+  subTitle: string;
+  Variant?: "heading" | "blog";
+  style?:{}
+}
+
+const Header: React.FC<Props> = ({ title,style, subTitle, Variant = "heading" }) => {
+  return (
+    <>
+      {Variant === "heading" ? (
+        <div style={style} className="text-center w-full py-8">
+          <h1 className="text-2xl font-semibold hover:cursor-pointer inline-block hover:text-blue-700 transition duration-300">
+            {title}
+          </h1>
+          <h2 className="text-base font-semibold">{subTitle}</h2>
+        </div>
+      ) : (
+        <div style={style} className="text-center">
+          <h2 className="text-base font-semibold hover:cursor-pointer inline-block hover:text-black    text-blue-700 transition duration-300">{title}</h2>
+          <h1 className="text-xl font-semibold ">
+            {subTitle}
+          </h1>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Header;
