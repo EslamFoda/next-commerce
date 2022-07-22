@@ -16,7 +16,7 @@ const BestSellersId = ({ product }) => {
     });
 
     dispatch({ type: "REMOVE_DUBLICATES", payload: filterDublicatProd });
-  }, [seenProducts]);
+  }, []);
   return (
     <>
       <Breadcrumb type={storeProducts[0]?.type} slug={storeProducts[0]?.slug} />
