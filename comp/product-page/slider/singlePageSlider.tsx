@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
-import InnerImageZoom from "react-inner-image-zoom";
-import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
+// import InnerImageZoom from "react-inner-image-zoom";
+// import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
+import ProductSlider from "../ProductSlider";
 function ThumbnailPlugin(mainRef) {
   return (slider) => {
     function removeActive() {
@@ -24,6 +25,7 @@ function ThumbnailPlugin(mainRef) {
     }
 
     slider.on("created", () => {
+      console.log("creteasdasdasd");
       if (!mainRef.current) return;
       addActive(slider.track.details.rel);
       addClickEvents();
@@ -37,7 +39,7 @@ function ThumbnailPlugin(mainRef) {
   };
 }
 
-const SinglePageSlider = ({product}) => {
+const SinglePageSlider = ({ product }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -74,17 +76,18 @@ const SinglePageSlider = ({product}) => {
 
     [ThumbnailPlugin(instanceRef)]
   );
+
   return (
     <>
       {" "}
-      <div ref={sliderRef} className={`keen-slider ${loaded ? "opacity-100" : "opacity-0"}`}>
+      {/* <div ref={sliderRef} className={`keen-slider ${loaded ? "opacity-100" : "opacity-0"}`}>
         {product.prodImages.map((image) => {
           return (
             <div
               key={image.id}
-              className="keen-slider__slide max-h-[500px] relative"
+              className="keen-slider__slide max-w-[500px] max-h-[500px] relative"
             >
-              <InnerImageZoom hideHint={true} src={image.url} />
+              <InnerImageZoom className='max-w-[400px]' hideHint={true} src={image.url} />
             </div>
           );
         })}
@@ -142,6 +145,23 @@ const SinglePageSlider = ({product}) => {
             />
           </>
         )}
+      </div> */}
+      <div className={"flex items-center justify-center overflow-x-hidden"}>
+        <ProductSlider key={product.id}>
+          {product.prodImages.map((image, i) => (
+            <div key={image.url} className={"text-center h-full relative"}>
+              <Image
+                className={"w-full h-full max-h-full object-cover"}
+                src={image.url!}
+                alt={"Product Image"}
+                width={620}
+                height={550}
+                priority={i === 0}
+                quality="85"
+              />
+            </div>
+          ))}
+        </ProductSlider>
       </div>
     </>
   );
@@ -149,24 +169,23 @@ const SinglePageSlider = ({product}) => {
 
 export default SinglePageSlider;
 
- function Arrow(props) {
-    const disabeld = props.disabled ? " arrow--disabled" : "";
-    return (
-      <svg
-        onClick={props.onClick}
-        className={`arrow ${
-          props.left ? "arrow--left" : "arrow--right"
-        } ${disabeld}`}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        {props.left && (
-          <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-        )}
-        {!props.left && (
-          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-        )}
-      </svg>
-    );
-  }
-  
+// function Arrow(props) {
+//   const disabeld = props.disabled ? " arrow--disabled" : "";
+//   return (
+//     <svg
+//       onClick={props.onClick}
+//       className={`arrow ${
+//         props.left ? "arrow--left" : "arrow--right"
+//       } ${disabeld}`}
+//       xmlns="http://www.w3.org/2000/svg"
+//       viewBox="0 0 24 24"
+//     >
+//       {props.left && (
+//         <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+//       )}
+//       {!props.left && (
+//         <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+//       )}
+//     </svg>
+//   );
+// }

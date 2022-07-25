@@ -6,6 +6,7 @@ import Guides from "./guides";
 import TermsAndConditions from "./termsAndCond";
 import AddToWishlist from "./addToWishlist";
 import Details from "./details";
+import { Disclosure } from '@headlessui/react'
 import Collapse from "../common/collapse";
 const ProdInfo = ({ product }) => {
   const [random, setRandom] = useState(0);

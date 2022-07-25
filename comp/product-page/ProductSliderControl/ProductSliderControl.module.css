@@ -1,0 +1,30 @@
+.control {
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-between w-[95%] flex-row
+      z-30  select-none ;
+    height: 48px;
+  }
+  
+  .leftControl,
+  .rightControl {
+    @apply  cursor-pointer;
+    transition: background-color 0.2s ease;
+ 
+  }
+  
+  .leftControl:hover,
+  .rightControl:hover {
+   
+  }
+  
+  .leftControl:focus,
+  .rightControl:focus {
+    @apply outline-none;
+  }
+  
+  .rightControl {
+    /* @apply border-l */
+  }
+  
+  .leftControl {
+    margin-right: -1px;
+  }
