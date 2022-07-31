@@ -64,3 +64,43 @@ export const getProducts = async (type, quantity = 10) => {
 
   return results;
 };
+
+
+export const getAllProd = async () => {
+  const query = gql`
+    query MyQuery {
+      storeProducts(first: 50) {
+        id
+        collection
+        price
+        quantity
+        slug
+        title
+        vendor
+        productType
+        rate
+        type
+        image {
+          id
+          url
+        }
+        prodImages {
+          id
+          url
+        }
+      }
+    }
+  `;
+
+  const results = await request(graphqlAPI, query);
+
+  return results;
+};
+
+
+
+// query MyQuery {
+//   storeProducts(where: {productType: "Shirt"}) {
+//     id
+//   }
+// }

@@ -1,8 +1,8 @@
 const ShippingGuide = () => {
   return (
     <>
-      <h2 className="text-[#191919] font-semibold mb-2">SHIPPING</h2>
-      <ul className="list-disc list-inside text-[#777777] text-sm leading-[22px]">
+      <h2 className="text-font-color font-semibold mb-2">SHIPPING</h2>
+      <ul className="list-disc list-inside text-gray text-sm leading-[22px]">
         <li>Complimentary ground shipping within 1 to 7 business days</li>
         <li>In-store collection available within 1 to 7 business days</li>
         <li>Next-day and Express delivery options also available</li>
@@ -15,10 +15,10 @@ const ShippingGuide = () => {
           delivery times
         </li>
       </ul>
-      <h2 className="text-[#191919] font-semibold mb-2 mt-5">
+      <h2 className="text-font-color font-semibold mb-2 mt-5">
         RETURNS AND EXCHANGES
       </h2>
-      <ul className="list-disc list-inside text-[#777777] text-sm leading-[22px]">
+      <ul className="list-disc list-inside text-gray text-sm leading-[22px]">
         <li>Easy and complimentary, within 14 days</li>
         <li>See conditions and procedure in our return FAQs</li>
       </ul>

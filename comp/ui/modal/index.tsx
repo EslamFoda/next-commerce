@@ -1,7 +1,17 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-
-const Modal = ({ isOpen, setIsOpen, children }) => {
+import React, { Fragment } from "react";
+interface Props {
+  isOpen: boolean;
+  setIsOpen: any;
+  children: any;
+  maxWidth?: "1024px" | "896px" | "768px" | "672px" | "576px";
+}
+const Modal: React.FC<Props> = ({
+  isOpen,
+  setIsOpen,
+  children,
+  maxWidth = "1024px",
+}) => {
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -27,13 +37,16 @@ const Modal = ({ isOpen, setIsOpen, children }) => {
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
+                enterFrom="opacity-0 -translate-y-20"
+                enterTo="opacity-100 translate-y-0"
                 leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 -translate-y-20"
               >
-                <Dialog.Panel className="w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel
+                  style={{ maxWidth: maxWidth }}
+                  className={`w-full  transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all`}
+                >
                   {children}
                 </Dialog.Panel>
               </Transition.Child>

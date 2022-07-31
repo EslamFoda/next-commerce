@@ -4,7 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 // import InnerImageZoom from "react-inner-image-zoom";
 // import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
-import ProductSlider from "../ProductSlider";
+import ProductSlider from "../../ui/ProductSlider";
 function ThumbnailPlugin(mainRef) {
   return (slider) => {
     function removeActive() {
@@ -25,7 +25,6 @@ function ThumbnailPlugin(mainRef) {
     }
 
     slider.on("created", () => {
-      console.log("creteasdasdasd");
       if (!mainRef.current) return;
       addActive(slider.track.details.rel);
       addClickEvents();

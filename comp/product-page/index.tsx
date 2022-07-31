@@ -1,17 +1,17 @@
-import SinglePageSlider from "../product-page/slider/singlePageSlider";
+import SinglePageSlider from "./sliderView/singlePageSlider";
 import ProdInfo from "./prodInfo";
-
-const ProductDetails = ({ product }) => {
+import Grid from "../ui/Grid";
+const ViewProduct = ({ product }) => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 p-8 gap-8">
+    <Grid layout="E">
       <div className='lg:sticky md:sticky md:top-0 md:self-start lg:top-0 lg:self-start'>
         <SinglePageSlider product={product} />
       </div>
       <div>
         <ProdInfo product={product} />
       </div>
-    </div>
+    </Grid>
   );
 };
 
-export default ProductDetails;
+export default ViewProduct;

@@ -1,4 +1,9 @@
-const TermsAndConditions = ()=>{
+import React from "react";
+
+interface Props {
+  fontSize?: "sm" | "xs" | "base"
+}
+const TermsAndConditions: React.FC<Props> = ({fontSize = "sm"})=>{
     return (
         <div className="my-4">
         <div className="flex items-center">
@@ -10,7 +15,7 @@ const TermsAndConditions = ()=>{
           />
           <label
             htmlFor="link-checkbox"
-            className="ml-2 cursor-pointer text-sm font-medium text-gray-900 "
+            className={`ml-2 cursor-pointer text-${fontSize} font-medium text-gray-900 `}
           >
             I agree with the terms and conditions.
           </label>

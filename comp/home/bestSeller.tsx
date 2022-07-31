@@ -3,6 +3,7 @@ import ProdCard from "../common/prodCard";
 import Grid from "../ui/Grid";
 const BestSellers = ({ products }) => {
   const { storeProducts } = products;
+  console.log(storeProducts,'asdasd')
   return (
     <div>
       <Header title="BEST SELLER" subTitle="TOP PRODUCTS OF THIS WEEK" />

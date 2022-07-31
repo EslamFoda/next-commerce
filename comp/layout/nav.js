@@ -1,10 +1,8 @@
 import styles from "../../styles/Nav.module.css";
-import {
-  SearchIcon,
-  CartIcon,
-  UserIcon,
-  SettingIcon,
-} from "../icons";
+import Popover from "../ui/popover";
+import Tooltip from "../ui/tooltip";
+import Cart from "../cart";
+import { SearchIcon, CartIcon, UserIcon, SettingIcon } from "../icons";
 const Nav = () => {
   return (
     <nav className="flex justify-between items-center p-2 bg-white shadow-sm">
@@ -23,8 +21,22 @@ const Nav = () => {
       </div>
 
       <div className={styles.right}>
-        <SearchIcon />
-        <CartIcon />
+        <Tooltip className="mt-3" placement="bottom-center" text="Search">
+          <span>
+            <SearchIcon />
+          </span>
+        </Tooltip>
+        <Popover
+          button={
+            <Tooltip className="mt-3" placement="bottom-center" text="Cart">
+              <span>
+                <CartIcon />
+              </span>
+            </Tooltip>
+          }
+        >
+          <Cart />
+        </Popover>
         <UserIcon />
         <SettingIcon />
       </div>

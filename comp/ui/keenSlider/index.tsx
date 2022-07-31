@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import ProdCard from "../common/prodCard";
-function RecentlyViewProd({ seenProducts }) {
+import ProdCard from "../../common/prodCard";
+const KeenSlider = ({  data, title }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -15,23 +15,22 @@ function RecentlyViewProd({ seenProducts }) {
     },
     breakpoints: {
       "(min-width: 400px)": {
-        slides: { perView:2, spacing: 5 },
+        slides: { perView: 2, spacing: 5 },
       },
       "(min-width: 1000px)": {
         slides: { perView: 4, spacing: 10 },
       },
     },
-   
   });
   return (
     <>
-      {seenProducts.length ? (
+      {data?.length ? (
         <div className="p-8 relative">
           <div className="flex items-center justify-between my-9">
-            <h1>RELATED PRODUCTS</h1>
+            <h1>{title}</h1>
             <div>
               {loaded && instanceRef.current && (
-                <div className='flex items-center gap-4'>
+                <div className="flex items-center gap-4">
                   <Arrow
                     left
                     onClick={(e) =>
@@ -58,16 +57,16 @@ function RecentlyViewProd({ seenProducts }) {
             style={{ position: "unset" }}
             className="keen-slider"
           >
-            {seenProducts?.map((prod) => {
+            {data?.map((prod,i) => {
               return (
-                <div key={prod.id} className="keen-slider__slide">
+                <div key={i} className="keen-slider__slide">
                   <ProdCard
                     title={prod.title}
                     price={prod.price}
-                    image={prod.image.url}
+                    image={prod?.image?.url}
                     vendor={prod.vendor}
                     rate={prod.rate}
-                    prodImages={prod.prodImages}
+                    prodImages={prod?.prodImages}
                     slug={prod.slug}
                     type={"best-seller"}
                     prod={prod}
@@ -81,10 +80,8 @@ function RecentlyViewProd({ seenProducts }) {
       ) : null}
     </>
   );
-}
-
-export default RecentlyViewProd;
-
+};
+export default KeenSlider;
 function Arrow(props) {
   const disabeld = props.disabled ? " arrow--disabled" : "";
   return (

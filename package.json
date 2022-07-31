@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
     "@types/react": "^18.0.15",
     "clsx": "^1.2.1",
     "dotenv": "^16.0.1",
+    "focus-trap": "^6.9.4",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",
     "keen-slider": "^6.7.0",
@@ -21,6 +23,7 @@
     "react-collapsed": "^3.3.2",
     "react-dom": "18.2.0",
     "react-inner-image-zoom": "^3.0.1",
+    "react-laag": "^2.0.4",
     "react-merge-refs": "^2.0.1",
     "typescript": "^4.7.4"
   },
