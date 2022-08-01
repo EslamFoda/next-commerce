@@ -3,7 +3,6 @@ import ProdCard from "../common/prodCard";
 import Grid from "../ui/Grid";
 const Trending = ({ products }) => {
   const { storeProducts } = products;
-  console.log(storeProducts,'asdasd')
   return (
     <>
       <Header title="TRENDING" subTitle="TOP WISHES OF THIS WEEK" />
