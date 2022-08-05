@@ -1,10 +1,15 @@
 import { CartIcon } from "../icons";
 import Button from "../ui/Button";
 import { useAppContext } from "../../context/AppContext";
-import { useState } from "react";
-const Counter = ({ product }) => {
+import { FC, useState } from "react";
+interface Props {
+  product: any;
+  button?: boolean;
+}
+const CounterWithBtn: FC<Props> = ({ product, button = true }) => {
   const { cart, dispatch } = useAppContext();
   const [quantity, setQuantity] = useState(product?.quantity);
+
   const increment = () => {
     setQuantity(quantity + 1);
   };
@@ -13,7 +18,7 @@ const Counter = ({ product }) => {
       setQuantity(quantity - 1);
     }
   };
-  const addToCart = ()=>{
+  const addToCart = () => {
     const existProduct = cart.find((item) => product.id === item.id);
     if (existProduct) {
       const newQuantity = (existProduct.quantity += quantity);
@@ -24,11 +29,14 @@ const Counter = ({ product }) => {
       const prod = { ...product, quantity: quantity };
       dispatch({ type: "ADD_TO_CART", payload: prod });
     }
-    // dispatch({ type: "UPDATE_EXIST_CART_ITEM", payload: prod.id });
-  }
+  };
   return (
-    <div className="flex items-center mt-8  gap-8">
-      <div className="flex items-center justify-around w-[200px] rounded-md h-[50px] bg-light">
+    <div className="flex items-center mt-8 gap-8">
+      <div
+        className="flex items-center justify-around 
+         w-[200px]
+        rounded-md h-[50px] bg-light"
+      >
         <div className="cursor-pointer" onClick={decrement}>
           -
         </div>
@@ -37,15 +45,12 @@ const Counter = ({ product }) => {
           +
         </div>
       </div>
-      <Button
-        onClick={addToCart}
-        full
-        icon={<CartIcon />}
-      >
+
+      <Button onClick={addToCart} full icon={<CartIcon />}>
         Add to cart
       </Button>
     </div>
   );
 };
 
-export default Counter;
+export default CounterWithBtn;

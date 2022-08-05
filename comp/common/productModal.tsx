@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Counter from "../product-page/counter"
+import Counter from "../product-page/counterWithBtn"
 import ProductType from "../product-page/prdductType"
 import ProdDetails from "../product-page/prodDetails"
 import Grid from "../ui/Grid"

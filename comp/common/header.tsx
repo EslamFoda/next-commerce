@@ -5,14 +5,15 @@ interface Props {
   subTitle: string;
   Variant?: "heading" | "blog";
   style?:{}
+  hover?:boolean
 }
 
-const Header: React.FC<Props> = ({ title,style, subTitle, Variant = "heading" }) => {
+const Header: React.FC<Props> = ({ title,style, subTitle, Variant = "heading",hover = true }) => {
   return (
     <>
       {Variant === "heading" ? (
         <div style={style} className="text-center w-full py-8">
-          <h1 className="text-2xl font-semibold hover:cursor-pointer inline-block hover:text-blue-700 transition duration-300">
+          <h1 className={`text-2xl font-semibold inline-block ${hover ? "hover:text-blue-700 hover:cursor-pointer" : null} transition duration-300`}>
             {title}
           </h1>
           <h2 className="text-base font-semibold">{subTitle}</h2>

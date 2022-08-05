@@ -1,6 +1,7 @@
 import CartItem from "./cartItem";
 import CartCheckout from "./cartCheckout";
 import { useAppContext } from "../../context/AppContext";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 const Cart = () => {
   const { cart } = useAppContext();
@@ -13,6 +14,7 @@ const Cart = () => {
     );
     setTotalPrice(price);
   }, [cart]);
+  
   return (
     <>
       <>
@@ -31,7 +33,9 @@ const Cart = () => {
       </>
       {cart.length > 3 && (
         <div className="w-full text-center mb-6">
-          <span title="view cart" className="text-primary cursor-pointer">. . .</span>
+          <Link href='cart'>
+          <span  title="view cart" className="text-primary cursor-pointer">. . .</span>
+          </Link>
         </div>
       )}
       <CartCheckout total={totalPrice} />

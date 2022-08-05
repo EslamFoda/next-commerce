@@ -30,6 +30,16 @@
     color: var(--primary);
 }
 
+.outline{
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+.outline:hover{
+    background-color: var(--primary);
+    color: white;
+   
+}
+
 .secondary {
     background-color: white;
     color: black;

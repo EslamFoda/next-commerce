@@ -1,6 +1,6 @@
 import Rate from "../common/rate";
 import Button from "../ui/Button";
-import Counter from "./counter";
+import Counter from "./counterWithBtn";
 import Guides from "./guides";
 import TermsAndConditions from "./termsAndCond";
 import AddToWishlist from "./addToWishlist";

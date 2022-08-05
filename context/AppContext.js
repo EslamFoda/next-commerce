@@ -14,12 +14,48 @@ export const seenProductsReducer = (state, action) => {
     //   }
     case "ADD_TO_CART":
       return {
-        cart: [action.payload,...state.cart],
+        cart: [action.payload, ...state.cart],
+      };
+    case "CLEAR_CART":
+      return {
+        cart: [],
       };
     case "REMOVE_CART_ITEM":
       return {
         cart: state.cart.filter((item) => item.id !== action.payload),
       };
+    case "increment":
+      return {
+        cart: state.cart.map((item) => {
+          if (item.id === action.payload.id) {
+            const totalPrice = item.price * item.quantity
+            return { ...item, quantity: item.quantity++,totalPrice };
+          } else {
+            return item;
+          }
+        }),
+      };
+    case "decrement":
+      return {
+        cart: state.cart.map((item) => {
+          if (item.id === action.payload.id && item.quantity >= 1) {
+            const totalPrice = item.price * item.quantity
+            return { ...item, quantity: item.quantity--,totalPrice:totalPrice };
+          } else {
+            return item;
+          }
+        }),
+      };
+    // case "UPDATE_CART_ITEM":
+    //   return {
+    //     cart: state.cart.map((item) => {
+    //       if (item.id === action.payload.id) {
+    //         return { ...item, quantity: action.payload.quantity };
+    //       } else {
+    //         return item;
+    //       }
+    //     }),
+    //   };
     default:
       return state;
   }

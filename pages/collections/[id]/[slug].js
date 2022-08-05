@@ -38,7 +38,7 @@ const BestSellersId = ({ product, allProd }) => {
   },[storeProducts[0]])
   return (
     <div className="mb-24">
-      <Breadcrumb type={storeProducts[0]?.type} slug={storeProducts[0]?.slug} />
+      <Breadcrumb base="home" type={storeProducts[0]?.type} slug={storeProducts[0]?.slug} />
       <ViewProduct product={storeProducts[0]} />
       <RelatedProducts related={related} />
       <CustomProducts custom={custom}/>

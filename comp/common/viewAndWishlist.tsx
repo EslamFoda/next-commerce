@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Grid from "../ui/Grid";
 import ProdDetails from "../product-page/prodDetails";
-import Counter from "../product-page/counter";
+import Counter from "../product-page/counterWithBtn";
 import ProductType from "../product-page/prdductType";
 import ProductModal from "./productModal";
 const ViewAndWishlist = ({ prod }) => {
