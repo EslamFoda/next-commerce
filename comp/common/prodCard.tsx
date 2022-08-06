@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { CartIcon } from "../icons";
 import Button from "../ui/Button";
@@ -14,7 +14,7 @@ interface Props {
   rate?: number;
   image: string;
   vendor: string;
-  prodImages?: [];
+  prodImages?: any;
   slug?: string;
   type?: string;
   prod?: any;
@@ -34,7 +34,10 @@ const ProdCard: React.FC<Props> = ({
   id,
 }) => {
   // @ts-ignore
-  const [selectProd, setSelectedProd] = useState(prodImages[0].url);
+  const [selectProd, setSelectedProd] = useState(null);
+  useEffect(() => {
+    setSelectedProd(prodImages[0].url);
+  }, [prodImages[0]]);
   const router = useRouter();
   const { cart, dispatch } = useAppContext();
   const addToCart = () => {

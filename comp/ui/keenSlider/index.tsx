@@ -1,7 +1,22 @@
 import React, { useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
+import { useKeenSlider,KeenSliderPlugin } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import ProdCard from "../../common/prodCard";
+const MutationPlugin: KeenSliderPlugin = (slider) => {
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      slider.update();
+    });
+  });
+  const config = { childList: true };
+
+  slider.on("created", () => {
+    observer.observe(slider.container, config);
+  });
+  slider.on("destroyed", () => {
+    observer.disconnect();
+  });
+};
 const KeenSlider = ({  data, title }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -21,7 +36,7 @@ const KeenSlider = ({  data, title }) => {
         slides: { perView: 4, spacing: 10 },
       },
     },
-  });
+  },[MutationPlugin]);
   return (
     <>
       {data?.length ? (
