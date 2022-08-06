@@ -98,6 +98,38 @@ export const getAllProd = async () => {
 };
 
 
+export const getCollection = async (collection) => {
+  const query = gql`
+    query MyQuery {
+      storeProducts(first: 50, where: {collection: "${collection}"}) {
+        id
+        collection
+        price
+        quantity
+        slug
+        title
+        vendor
+        productType
+        rate
+        type
+        image {
+          id
+          url
+        }
+        prodImages {
+          id
+          url
+        }
+      }
+    }
+  `;
+
+  const results = await request(graphqlAPI, query);
+
+  return results;
+};
+
+
 
 // query MyQuery {
 //   storeProducts(where: {productType: "Shirt"}) {

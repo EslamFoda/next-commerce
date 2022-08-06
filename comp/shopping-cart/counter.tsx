@@ -1,7 +1,6 @@
-const Counter = ({ item, dispatch, setQuant, quantity,price,quant }) => {
+const Counter = ({ item, dispatch, quantity }) => {
   const decrement = () => {
     if (quantity > 1) {
-      setQuant(quantity - 1);
       dispatch({
         type: "decrement",
         payload: { id: item.id },
@@ -9,7 +8,6 @@ const Counter = ({ item, dispatch, setQuant, quantity,price,quant }) => {
     }
   };
   const increment = () => {
-    setQuant(quantity + 1);
     dispatch({
       type: "increment",
       payload: { id: item.id },

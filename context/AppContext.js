@@ -28,8 +28,7 @@ export const seenProductsReducer = (state, action) => {
       return {
         cart: state.cart.map((item) => {
           if (item.id === action.payload.id) {
-            const totalPrice = item.price * item.quantity
-            return { ...item, quantity: item.quantity++,totalPrice };
+            return { ...item, quantity: item.quantity++ };
           } else {
             return item;
           }
@@ -39,8 +38,7 @@ export const seenProductsReducer = (state, action) => {
       return {
         cart: state.cart.map((item) => {
           if (item.id === action.payload.id && item.quantity >= 1) {
-            const totalPrice = item.price * item.quantity
-            return { ...item, quantity: item.quantity--,totalPrice:totalPrice };
+            return { ...item, quantity: item.quantity-- };
           } else {
             return item;
           }
