@@ -3,7 +3,7 @@ import KeenSlider from "../../ui/keenSlider";
 const CustomProducts = ({ custom }) => {
   return (
     <>
-      <KeenSlider data={custom} title="CUSTOM PRODUCTS" />
+      <KeenSlider type='vendor' data={custom} title="VENDOR PRODUCTS" />
     </>
   );
 };

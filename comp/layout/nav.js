@@ -2,6 +2,7 @@ import styles from "../../styles/Nav.module.css";
 import Popover from "../ui/popover";
 import Tooltip from "../ui/tooltip";
 import Cart from "../cart";
+import Link from "next/link";
 import { SearchIcon, CartIcon, UserIcon, SettingIcon } from "../icons";
 const Nav = () => {
   return (
@@ -14,8 +15,12 @@ const Nav = () => {
           <div>PAGES</div>
           <div>BLOG</div>
           <div>PORTFOLIO</div>
-          <div>WOMEN</div>
-          <div>MEN</div>
+          <div>
+            <Link href="/collections/Womens">WOMEN</Link>
+          </div>
+          <div>
+            <Link href="/collections/Mens">MEN</Link>
+          </div>
           <div>BUY THEME!</div>
         </div>
       </div>

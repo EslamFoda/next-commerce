@@ -3,7 +3,7 @@ import KeenSlider from "../../ui/keenSlider";
 const RelatedProducts = ({ related }) => {
   return (
     <div>
-      <KeenSlider data={related} title="RELATED PRODUCTS" />
+      <KeenSlider type='related' data={related} title="RELATED PRODUCTS" />
     </div>
   );
 };

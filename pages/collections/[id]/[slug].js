@@ -8,7 +8,7 @@ import RelatedProducts from "../../../comp/product-page/relatedProducts";
 import CustomProducts from '../../../comp/product-page/customProducts'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-const BestSellersId = ({ product, allProd }) => {
+const CollectionProduct = ({ product, allProd }) => {
   const { storeProducts } = product;
   const router = useRouter();
   const { slug } = router.query;
@@ -46,7 +46,7 @@ const BestSellersId = ({ product, allProd }) => {
   );
 };
 
-export default BestSellersId;
+export default CollectionProduct;
 
 export async function getServerSideProps({ params }) {
   const product = (await getSingleProduct(params.slug, 8)) || [];

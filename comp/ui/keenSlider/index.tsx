@@ -17,7 +17,8 @@ const MutationPlugin: KeenSliderPlugin = (slider) => {
     observer.disconnect();
   });
 };
-const KeenSlider = ({  data, title }) => {
+const KeenSlider = ({  data, title,type }) => {
+  console.log(data,'dataaa')
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -42,7 +43,7 @@ const KeenSlider = ({  data, title }) => {
       {data?.length ? (
         <div className="p-8 relative">
           <div className="flex items-center justify-between my-9">
-            <h1>{title}</h1>
+            <h1 className="font-semibold">{title}</h1>
             <div>
               {loaded && instanceRef.current && (
                 <div className="flex items-center gap-4">
@@ -83,7 +84,7 @@ const KeenSlider = ({  data, title }) => {
                     rate={prod.rate}
                     prodImages={prod?.prodImages}
                     slug={prod.slug}
-                    type={"best-seller"}
+                    type={type}
                     prod={prod}
                     id={prod.id}
                   />
