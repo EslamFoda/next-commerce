@@ -33,7 +33,7 @@ const Cart = () => {
       </>
       {cart.length > 3 && (
         <div className="w-full text-center mb-6">
-          <Link href='cart'>
+          <Link href='/cart'>
           <span  title="view cart" className="text-primary cursor-pointer">. . .</span>
           </Link>
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import TermsAndConditions from "../product-page/termsAndCond";
 import Button from "../ui/Button";
+import Link from "next/link";
 interface Props {
   total: number;
 }
@@ -18,9 +19,11 @@ const CartCheckout: React.FC<Props> = ({ total }) => {
         PROCEED TO CHECKOUT
       </Button>
       <div className="w-full text-center">
-        <span className="text-primary cursor-pointer hover:text-black transition-all">
-          VIEW CART
-        </span>
+        <Link href="/cart">
+          <span className="text-primary cursor-pointer hover:text-black transition-all">
+            VIEW CART
+          </span>
+        </Link>
       </div>
     </div>
   );
