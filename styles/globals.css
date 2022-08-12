@@ -216,4 +216,12 @@
 
 }
 
+.active > svg {
+  fill: black ;
+  opacity: 1;
+}
 
+.list-svg > svg {
+  height: 18px;
+  width: 18px;
+}

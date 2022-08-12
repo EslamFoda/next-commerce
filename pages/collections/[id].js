@@ -1,14 +1,16 @@
 import Breadcrumb from "../../comp/ui/breadcrumb";
 import { useRouter } from "next/router";
 import CollectionView from '../../comp/collections/collectionView'
-import { getCollection } from "../../services";
-const Collection = ({collection}) =>{
+import { getCollection,getProducts } from "../../services";
+const Collection = ({collection,trendingAndBestSellers}) =>{
     const {query} = useRouter()
-    console.log(collection)
+   
+   
+    
     return(
         <>
         <Breadcrumb base="home" type={query.id}  />
-        <CollectionView type={query.id} collection={collection}/>
+        <CollectionView type={query.id} collection={collection} trendingAndBestSellers={trendingAndBestSellers}/>
         </>
     )
 }
@@ -16,7 +18,7 @@ const Collection = ({collection}) =>{
 export default Collection;
 export async function getServerSideProps({ params }) {
     const collection = (await getCollection(params.id)) || [];
-  
-    return { props: { collection } };
+    const trendingAndBestSellers = (await getProducts(params.id, 20)) || [];
+    return { props: { collection,trendingAndBestSellers } };
   }
   

@@ -5,9 +5,9 @@ import s from "./Grid.module.css";
 interface GridProps {
   className?: string;
   children?: ReactNode[] | Component[] | any[] | any;
-  layout?: "A" | "B" | "C" | "D" | "E" | "normal";
+  layout?: "A" | "B" | "C" | "D" | "E" | "normal" | 1 | 2 | 3 | 4 ;
   el?: HTMLElement;
-  style?:any
+  style?: any;
 }
 
 const Grid: FC<GridProps> = ({
@@ -29,6 +29,10 @@ const Grid: FC<GridProps> = ({
       [s.layoutD]: layout === "D",
       [s.layoutE]: layout === "E",
       [s.normal]: layout === "normal",
+      [s.oneCol]: layout === 1,
+      [s.twoCol]: layout === 2,
+      [s.threeCol]: layout === 3,
+      [s.fourCol]: layout === 4,
     },
     className
   );

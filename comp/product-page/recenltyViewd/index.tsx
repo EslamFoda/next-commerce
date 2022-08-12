@@ -21,9 +21,7 @@ const MutationPlugin = (slider) => {
 const RecentlyView = ({ seenProducts }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  useEffect(()=>{
-    console.log(seenProducts)
-  },[])
+
   const [sliderRef, instanceRef] = useKeenSlider(
     {
       initial: 1,
@@ -92,7 +90,7 @@ const RecentlyView = ({ seenProducts }) => {
                       rate={prod.rate}
                       prodImages={prod?.prodImages}
                       slug={prod.slug}
-                      type={"best-seller"}
+                      type={prod.type}
                       prod={prod}
                       id={prod.id}
                     />

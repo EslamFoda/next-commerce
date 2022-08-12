@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "comp/home/hero.js"  ],
+, "comp/home/hero.js", "hooks/useWindowDimensions.js"  ],
   "exclude": [
     "node_modules"
   ]

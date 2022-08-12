@@ -294,6 +294,7 @@ export const ThinHeart = () => {
 export const Grid4 = () => {
   return (
     <svg
+      className="fill-gray opacity-20 hover:fill-font-color transition-all hover:opacity-100"
       width="18px"
       height="18px"
       viewBox="0 0 8 8"
@@ -307,6 +308,7 @@ export const Grid4 = () => {
 export const Grid3 = () => {
   return (
     <svg
+      className="fill-gray opacity-20 hover:fill-font-color transition-all hover:opacity-100"
       width="24px"
       height="24px"
       viewBox="0 0 24 24"
@@ -328,14 +330,23 @@ export const Grid3 = () => {
 
 export const Grid2 = () => {
   return (
-    <svg width="26px" height="26px" viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg" ><title>grid</title><path d="M64 96L200 96 200 232 64 232 64 96ZM248 96L384 96 384 232 248 232 248 96ZM64 280L200 280 200 416 64 416 64 280ZM248 280L384 280 384 416 248 416 248 280Z" /></svg>
-
+    <svg
+      className="fill-gray opacity-20 hover:fill-font-color transition-all hover:opacity-100"
+      width="26px"
+      height="26px"
+      viewBox="-32 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>grid</title>
+      <path d="M64 96L200 96 200 232 64 232 64 96ZM248 96L384 96 384 232 248 232 248 96ZM64 280L200 280 200 416 64 416 64 280ZM248 280L384 280 384 416 248 416 248 280Z" />
+    </svg>
   );
 };
 
 export const List = () => {
   return (
     <svg
+      className="fill-gray opacity-20 hover:fill-font-color transition-all hover:opacity-100"
       width="27px"
       height="27px"
       viewBox="0 0 32 32"

@@ -28,7 +28,7 @@ export default function Home({ trending, bestSeller }) {
 
 export async function getStaticProps() {
   const trending = (await getProducts("Trending", 8)) || [];
-  const bestSeller = (await getProducts("Best Seller", 8)) || [];
+  const bestSeller = (await getProducts("Best-Seller", 8)) || [];
 
   return { props: { trending, bestSeller } };
 }

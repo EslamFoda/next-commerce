@@ -1,6 +1,9 @@
 import React from "react";
-
-export default function Rate({ rate = 0 }) {
+interface Props {
+  size?: 4 | 5;
+  rate: number;
+}
+const Rate: React.FC<Props> = ({ rate = 0, size = 5 }) => {
   return (
     <div className="flex items-center">
       {[...Array(5)].map((star, i) => {
@@ -9,7 +12,7 @@ export default function Rate({ rate = 0 }) {
         return (
           <svg
             key={i}
-            className={`w-5 h-5 ${rateClass}`}
+            className={`w-${size} h-${size} ${rateClass}`}
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -20,4 +23,5 @@ export default function Rate({ rate = 0 }) {
       })}
     </div>
   );
-}
+};
+export default Rate;

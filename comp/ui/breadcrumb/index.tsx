@@ -22,9 +22,12 @@ const Breadcrumb:FC<Props> = ({ base,type, slug }) => {
         <li>
           <div className="flex items-center">
             /
+            <Link href={`/collections/${type}`}>
             <span className="ml-1 cursor-pointer text-sm font-medium text-gray-700  md:ml-2 dark:text-gray-400 dark:hover:text-blue-400">
               {type}
             </span>
+            
+            </Link>
           </div>
         </li>
        {slug && <li aria-current="page">

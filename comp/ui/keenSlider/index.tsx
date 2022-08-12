@@ -18,7 +18,6 @@ const MutationPlugin: KeenSliderPlugin = (slider) => {
   });
 };
 const KeenSlider = ({  data, title,type }) => {
-  console.log(data,'dataaa')
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider({
