@@ -32,7 +32,6 @@ export const data = [
   },
 ];
 
-
 export const BlogsData = [
   {
     image:
@@ -63,8 +62,6 @@ export const BlogsData = [
   },
 ];
 
-
-
 export const insta = [
   {
     image:
@@ -89,5 +86,22 @@ export const insta = [
   {
     image:
       "https://cdn.shopify.com/s/files/1/0130/5041/3114/files/inst06_640x640.jpg?v=1620125994",
+  },
+];
+
+export const collectionsLinks = [
+  { title: "Womens", id: 1, url: "/collections/Womens", paramId: "Womens" },
+  { title: "Mens", id: 2, url: "/collections/Mens", paramId: "Mens" },
+  {
+    title: "Trending",
+    id: 3,
+    url: "/collections/Trending",
+    paramId: "Trending",
+  },
+  {
+    title: "Best Seller",
+    id: 4,
+    url: "/collections/Best-Seller",
+    paramId: "Best-Seller",
   },
 ];

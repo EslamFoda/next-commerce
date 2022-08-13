@@ -10,7 +10,13 @@ let gridLayout = [
   { icon: Grid3, id: 2, layout: 3, active: true },
 ];
 
-const Collection = ({ type, collection, trendingAndBestSellers }) => {
+const Collection = ({
+  type,
+  collection,
+  trendingAndBestSellers,
+  storeTypes,
+  typeData,
+}) => {
   const { query } = useRouter();
   const [grid, setGrid] = useState(3);
   const [collections, setCollections] = useState(null);
@@ -53,42 +59,85 @@ const Collection = ({ type, collection, trendingAndBestSellers }) => {
       </div>
       {/* @ts-ignore */}
       <Grid layout={grid}>
-        {collections?.map((item) => {
-          return (
-            <div key={item.id}>
-              {grid === 1 ? (
-                <ProdCard
-                  list={true}
-                  title={item.title}
-                  price={item.price}
-                  image={item?.image?.url}
-                  vendor={item.vendor}
-                  rate={item.rate}
-                  prodImages={item?.prodImages}
-                  slug={item.slug}
-                  type={type}
-                  prod={item}
-                  id={item.id}
-                />
-              ) : (
-                <ProdCard
-                  title={item.title}
-                  price={item.price}
-                  image={item?.image?.url}
-                  vendor={item.vendor}
-                  rate={item.rate}
-                  prodImages={item?.prodImages}
-                  slug={item.slug}
-                  type={type}
-                  prod={item}
-                  id={item.id}
-                />
-              )}
-            </div>
-          );
-        })}
+        <>
+          {storeTypes.length ? (
+            <>
+              {typeData?.map((item) => {
+                return (
+                  <div key={item.id}>
+                    {grid === 1 ? (
+                      <ProdCard
+                        list={true}
+                        title={item.title}
+                        price={item.price}
+                        image={item?.image?.url}
+                        vendor={item.vendor}
+                        rate={item.rate}
+                        prodImages={item?.prodImages}
+                        slug={item.slug}
+                        type={type}
+                        prod={item}
+                        id={item.id}
+                      />
+                    ) : (
+                      <ProdCard
+                        title={item.title}
+                        price={item.price}
+                        image={item?.image?.url}
+                        vendor={item.vendor}
+                        rate={item.rate}
+                        prodImages={item?.prodImages}
+                        slug={item.slug}
+                        type={type}
+                        prod={item}
+                        id={item.id}
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </>
+          ) : (
+            <>
+              {" "}
+              {collections?.map((item) => {
+                return (
+                  <div key={item.id}>
+                    {grid === 1 ? (
+                      <ProdCard
+                        list={true}
+                        title={item.title}
+                        price={item.price}
+                        image={item?.image?.url}
+                        vendor={item.vendor}
+                        rate={item.rate}
+                        prodImages={item?.prodImages}
+                        slug={item.slug}
+                        type={type}
+                        prod={item}
+                        id={item.id}
+                      />
+                    ) : (
+                      <ProdCard
+                        title={item.title}
+                        price={item.price}
+                        image={item?.image?.url}
+                        vendor={item.vendor}
+                        rate={item.rate}
+                        prodImages={item?.prodImages}
+                        slug={item.slug}
+                        type={type}
+                        prod={item}
+                        id={item.id}
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </>
+          )}
+        </>
       </Grid>
-
       {!collections && <Spinner />}
     </>
   );

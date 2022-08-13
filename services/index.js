@@ -127,7 +127,40 @@ export const getCollection = async (collection) => {
   const results = await request(graphqlAPI, query);
 
   return results;
+
 };
+export const getCollectionTypes = async () => {
+  const query = gql`
+    query MyQuery {
+      toreProducts(where: {productType_in: ["Belt","Jeans","Shoes"]}) {
+        id
+        collection
+        price
+        quantity
+        slug
+        title
+        vendor
+        productType
+        rate
+        type
+        image {
+          id
+          url
+        }
+        prodImages {
+          id
+          url
+        }
+      }
+    }
+  `;
+
+  const results = await request(graphqlAPI, query);
+
+  return results;
+};
+
+
 
 
 
