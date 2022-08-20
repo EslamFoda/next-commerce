@@ -19,7 +19,7 @@ const Guides = () => {
     setIsOpen3(true);
   };
   return (
-    <div className="flex justify-between w-full mt-8">
+    <div className="flex justify-between w-full flex-wrap gap-4  mt-8">
       <div className="flex items-center gap-7">
         <div
           onClick={openModal}

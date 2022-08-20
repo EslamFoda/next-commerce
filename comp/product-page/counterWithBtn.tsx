@@ -31,13 +31,14 @@ const CounterWithBtn: FC<Props> = ({ product, button = true }) => {
     }
   };
   return (
-    <div className="flex items-center mt-8 gap-8">
+    <div className="flex items-center  flex-col sm:flex-row mt-8 gap-8">
       <div
         className="flex items-center justify-around 
-         w-[200px]
+         w-full
+        sm:w-[200px]
         rounded-md h-[50px] bg-light"
       >
-        <div className="cursor-pointer" onClick={decrement}>
+        <div className="cursor-pointer " onClick={decrement}>
           -
         </div>
         <div>{quantity}</div>

@@ -17,9 +17,9 @@ const ProdDetails: React.FC<Props> = ({ title, price }) => {
         Availability:{" "}
         <span className="text-gray-color"> available in stock</span>
       </h3>
-      <div className="my-7">
-        <h1 className="text-3xl">{title}</h1>
-        <h2 className="text-3xl text-primary">${price}.00</h2>
+      <div className="lg:my-7 my-5">
+        <h1 className="lg:text-3xl text-2xl">{title}</h1>
+        <h2 className="lg:text-3xl text-2xl text-primary">${price}.00</h2>
         <h3 className="text-gray-color text-sm">Tax included.</h3>
       </div>
     </>

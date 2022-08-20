@@ -1,7 +1,7 @@
 import { ThinHeart,CompareIcon } from "../icons";
 const AddToWishlist = () => {
   return (
-    <div className="flex items-center gap-7 my-8">
+    <div className="flex items-center gap-x-7 gap-y-4 flex-wrap my-8">
       <div className="flex cursor-pointer group items-center gap-3">
         <ThinHeart />
         <span className="text-primary text-sm group-hover:text-black">

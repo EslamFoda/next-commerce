@@ -15,7 +15,7 @@ const TermsAndConditions: React.FC<Props> = ({fontSize = "sm"})=>{
           />
           <label
             htmlFor="link-checkbox"
-            className={`ml-2 cursor-pointer text-${fontSize} font-medium text-gray-900 `}
+            className={`ml-2 cursor-pointer lg:text-${fontSize} md:text-${fontSize} text-xs font-medium text-gray-900 `}
           >
             I agree with the terms and conditions.
           </label>

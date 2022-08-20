@@ -52,7 +52,7 @@ const Hero = () => {
 
   return (
     <div>
-      <div ref={sliderRef} className="keen-slider h-[75vh] lg:h-[93vh]">
+      <div ref={sliderRef} className="keen-slider h-[65vh] lg:h-[93vh]">
         {sliders.map((slide, i) => {
           return (
             <Slide key={i} slide={slide} i={i} currentSlide={currentSlide} />
