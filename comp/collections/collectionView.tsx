@@ -1,11 +1,8 @@
 import Collection from "./collection";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import MyDisclosure from "../ui/disclosure";
 import { collectionsLinks } from "../../constant";
-import { XIcon } from "@heroicons/react/solid";
 import Filter from "./filter";
-import Tooltip from "../ui/tooltip";
+import { useState } from "react";
+import Drawer from "../ui/drawer";
 
 const CollectionView = ({
   type,
@@ -18,31 +15,61 @@ const CollectionView = ({
   typeData,
 }) => {
   const { storeProducts } = collection;
-  const { query } = useRouter();
-
+  const [lowerBound, setLowerBound] = useState(0);
+  const [upperBound, setUpperBound] = useState(700);
+  const [filterPrice, setFilterPrice] = useState([0, 700]);
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="grid grid-cols-4 gap-5 h-screen p-4">
-      <div className=" hidden lg:block">
-        <div className="w-full px-4 pt-16">
-          <Filter
-            collectionsLinks={collectionsLinks}
-            productTypes={productTypes}
-            setProductTypes={setProductTypes}
-            setStoreTypes={setStoreTypes}
+    <>
+      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+        <Filter
+          setIsOpen={setIsOpen}
+          collectionsLinks={collectionsLinks}
+          productTypes={productTypes}
+          setProductTypes={setProductTypes}
+          setStoreTypes={setStoreTypes}
+          storeTypes={storeTypes}
+          setFilterPrice={setFilterPrice}
+          filterPrice={filterPrice}
+          setLowerBound={setLowerBound}
+          lowerBound={lowerBound}
+          setUpperBound={setUpperBound}
+          upperBound={upperBound}
+        />
+      </Drawer>
+      <div className="grid grid-cols-4 gap-5 h-screen p-4">
+        <div className=" hidden lg:block">
+          <div className="w-full px-4 pt-16">
+            <Filter
+              setIsOpen={setIsOpen}
+              collectionsLinks={collectionsLinks}
+              productTypes={productTypes}
+              setProductTypes={setProductTypes}
+              setStoreTypes={setStoreTypes}
+              storeTypes={storeTypes}
+              setFilterPrice={setFilterPrice}
+              filterPrice={filterPrice}
+              setLowerBound={setLowerBound}
+              lowerBound={lowerBound}
+              setUpperBound={setUpperBound}
+              upperBound={upperBound}
+            />
+          </div>
+        </div>
+        <div className="lg:col-span-3 col-span-4">
+          <Collection
+            setIsOpen={setIsOpen}
+            isOpen={isOpen}
             storeTypes={storeTypes}
+            type={type}
+            collection={storeProducts}
+            trendingAndBestSellers={trendingAndBestSellers.storeProducts}
+            typeData={typeData}
+            filterPrice={filterPrice}
           />
         </div>
       </div>
-      <div className="lg:col-span-3 col-span-4">
-        <Collection
-          storeTypes={storeTypes}
-          type={type}
-          collection={storeProducts}
-          trendingAndBestSellers={trendingAndBestSellers.storeProducts}
-          typeData={typeData}
-        />
-      </div>
-    </div>
+    </>
   );
 };
 
