@@ -1,8 +1,8 @@
 import Link from "next/link";
 import MyDisclosure from "../../ui/disclosure";
 import { useRouter } from "next/router";
+import { collectionsLinks } from "../../../constant";
 const CollectionsTab = ({
-  collectionsLinks,
   setStoreTypes,
   setProductTypes,
   productTypes,
@@ -13,7 +13,7 @@ const CollectionsTab = ({
   const clearFilter = () => {
     setStoreTypes([]);
     setProductTypes([...productTypes, ...storeTypes]);
-    setIsOpen(false)
+    setIsOpen(false);
   };
   return (
     <MyDisclosure title="COLLECTIONS">

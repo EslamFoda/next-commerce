@@ -3,7 +3,6 @@ import ShoppingTab from "./shoppingTab";
 import ProductTypeTab from "./productTypeTab";
 import PriceTab from "./priceTab";
 const Filter = ({
-  collectionsLinks,
   storeTypes,
   setStoreTypes,
   setProductTypes,
@@ -20,7 +19,6 @@ const Filter = ({
     <>
       <CollectionsTab
         setIsOpen={setIsOpen}
-        collectionsLinks={collectionsLinks}
         productTypes={productTypes}
         setProductTypes={setProductTypes}
         setStoreTypes={setStoreTypes}

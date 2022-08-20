@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { getProducts } from "../services/index";
-import Nav from "../comp/layout/nav";
 import Hero from "../comp/home/hero";
 import Categories from "../comp/home/categories";
 import Deals from "../comp/home/deals";
@@ -13,7 +12,7 @@ const Trending = dynamic(() => import("../comp/home/trending"));
 export default function Home({ trending, bestSeller }) {
   return (
     <div>
-      <Nav />
+      
       <Hero />
       <Categories />
       <BestSeller products={bestSeller} />

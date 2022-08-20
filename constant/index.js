@@ -105,3 +105,21 @@ export const collectionsLinks = [
     paramId: "Best-Seller",
   },
 ];
+
+export const navLinks = [
+  { title: "HOME", id: 1, url: "/", paramId: "/" },
+  { title: "Womens", id: 2, url: "/collections/Womens", paramId: "Womens" },
+  { title: "Mens", id: 3, url: "/collections/Mens", paramId: "Mens" },
+  {
+    title: "Trending",
+    id: 4,
+    url: "/collections/Trending",
+    paramId: "Trending",
+  },
+  {
+    title: "Best Seller",
+    id: 5,
+    url: "/collections/Best-Seller",
+    paramId: "Best-Seller",
+  },
+];

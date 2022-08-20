@@ -1,5 +1,4 @@
 import Collection from "./collection";
-import { collectionsLinks } from "../../constant";
 import Filter from "./filter";
 import { useState } from "react";
 import Drawer from "../ui/drawer";
@@ -24,7 +23,6 @@ const CollectionView = ({
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
         <Filter
           setIsOpen={setIsOpen}
-          collectionsLinks={collectionsLinks}
           productTypes={productTypes}
           setProductTypes={setProductTypes}
           setStoreTypes={setStoreTypes}
@@ -42,7 +40,6 @@ const CollectionView = ({
           <div className="w-full px-4 pt-16">
             <Filter
               setIsOpen={setIsOpen}
-              collectionsLinks={collectionsLinks}
               productTypes={productTypes}
               setProductTypes={setProductTypes}
               setStoreTypes={setStoreTypes}

@@ -52,7 +52,7 @@ const Hero = () => {
 
   return (
     <div>
-      <div ref={sliderRef} className="keen-slider h-[50vh] lg:h-[93vh]">
+      <div ref={sliderRef} className="keen-slider h-[75vh] lg:h-[93vh]">
         {sliders.map((slide, i) => {
           return (
             <Slide key={i} slide={slide} i={i} currentSlide={currentSlide} />
@@ -61,7 +61,7 @@ const Hero = () => {
       </div>
 
       {loaded && instanceRef.current && (
-        <div className="dots">
+        <div className="dots ">
           {[
             ...Array(instanceRef.current?.track?.details.slides.length).keys(),
           ].map((idx) => {
@@ -71,7 +71,7 @@ const Hero = () => {
                 onClick={() => {
                   instanceRef.current?.moveToIdx(idx);
                 }}
-                className={"dot" + (currentSlide === idx ? " active" : "")}
+                className={"dot !z-20" + (currentSlide === idx ? " active" : "")}
               ></button>
             );
           })}
