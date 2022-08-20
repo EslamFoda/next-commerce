@@ -170,7 +170,7 @@ export const InstaIcon = () => {
 export const SupportIcon = () => {
   return (
     <svg
-      style={{ width: "45px !important", height: "45px !important" }}
+      style={{ width: "45px", height: "45px" }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -185,7 +185,7 @@ export const SupportIcon = () => {
 export const ShippingIcon = () => {
   return (
     <svg
-      style={{ width: "45px !important", height: "45px !important" }}
+      style={{ width: "45px ", height: "45px " }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
