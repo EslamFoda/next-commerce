@@ -3,7 +3,7 @@ import Header from "../comp/common/header";
 import CartView from "../comp/shopping-cart/cartView";
 import { useAppContext } from "../context/AppContext";
 import { getCollection } from "../services";
-import Empty from '../comp/shopping-cart/empty'
+import Empty from "../comp/shopping-cart/empty";
 import dynamic from "next/dynamic";
 const DynamicSlider = dynamic(() => import("../comp/ui/keenSlider"));
 const Cart = ({ men, women }) => {
@@ -32,7 +32,7 @@ const Cart = ({ men, women }) => {
           />
         </>
       ) : (
-       <Empty/>
+        <Empty />
       )}
     </>
   );

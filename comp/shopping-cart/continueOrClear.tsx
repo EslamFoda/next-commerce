@@ -18,17 +18,17 @@ const ContinueOrClear = () => {
   };
   return (
     <>
-      <div className="flex items-end my-10  justify-between">
+      <div className="flex lg:items-end md:items-end items-center lg:flex-row md:flex-row flex-col-reverse gap-y-3 my-10 lg:justify-between md:justify-between justify-center">
         <Link href="/">
           <div className="flex items-center gap-2 hover:text-font-color transition-all text-primary cursor-pointer">
-            <ArrowLeftIcon className="h-5 w-5" /> <h3>CONTINUE SHOPPING</h3>
+            <ArrowLeftIcon className="h-4 w-4" /> <h3 className="text-sm">CONTINUE SHOPPING</h3>
           </div>
         </Link>
         <div
           onClick={openModel}
           className="flex items-center gap-2 hover:text-font-color transition-all text-primary cursor-pointer"
         >
-          <TrashIcon className="h-5 w-5" /> <h3>CLEAR SHOPPING CART </h3>
+          <TrashIcon className="h-4 w-4" /> <h3 className="text-sm">CLEAR SHOPPING CART </h3>
         </div>
       </div>
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} maxWidth="576px">

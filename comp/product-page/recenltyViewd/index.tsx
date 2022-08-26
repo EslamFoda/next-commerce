@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProdCard from "../../common/prodCard";
+import ProdCard from "../../mainCard";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 const MutationPlugin = (slider) => {
@@ -82,11 +82,6 @@ const RecentlyView = ({ seenProducts }) => {
                 return (
                   <div key={i} className="keen-slider__slide">
                     <ProdCard
-                      title={prod.title}
-                      price={prod.price}
-                      image={prod?.image?.url}
-                      vendor={prod.vendor}
-                      rate={prod.rate}
                       prodImages={prod?.prodImages}
                       slug={prod.slug}
                       type={prod.type}

@@ -2,8 +2,10 @@ import Button from "../../ui/Button";
 
 const Shipping = () => {
   return (
-    <div className="border-[1px] self-start border-solid border-gray-border pt-[32px] pr-[35px] pb-[35px] pl-[35px]">
-      <h2 className="text-xl font-medium">ESTIMATE SHIPPING AND TAX</h2>
+    <div className="border-[1px] self-start border-solid border-gray-border lg:pt-[32px] lg:p-[35px] sm:pt-[32px] pt-[22px] p-[25px]  sm:p-[35px]">
+      <h2 className="lg:text-xl sm:text-xl text-lg font-medium">
+        ESTIMATE SHIPPING AND TAX
+      </h2>
       <p className="my-4 text-sm font-normal text-gray">
         Enter your destination to get a shipping estimate
       </p>

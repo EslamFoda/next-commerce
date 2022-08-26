@@ -1,17 +1,17 @@
-import styles from "../../styles/Nav.module.css";
-import Popover from "../ui/popover";
-import Tooltip from "../ui/tooltip";
-import Cart from "../cart";
-import Link from "next/link";
+import styles from "../../../styles/Nav.module.css";
+import Popover from "../../ui/popover";
+import Tooltip from "../../ui/tooltip";
+import Cart from "../../cart";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { navLinks } from "../../constant";
-import { MenuIcon, ChevronRightIcon } from "@heroicons/react/solid";
-import Drawer from "../ui/drawer";
-import { SearchIcon, CartIcon, UserIcon, SettingIcon } from "../icons";
+import { navLinks } from "../../../constant";
+import { MenuIcon } from "@heroicons/react/solid";
+import Drawer from "../../ui/drawer";
+import { SearchIcon, CartIcon, UserIcon, SettingIcon } from "../../icons";
 import { useState } from "react";
-import FilterSearch from "../common/filterSearch";
-import TopDrawer from "../ui/topDrawer";
+import FilterSearch from "../../common/filterSearch";
+import TopDrawer from "../../ui/topDrawer";
+import NavLinks from "./navLinks";
 const Nav = () => {
   const { query, route } = useRouter();
   const [isOpen, setIsOpen] = useState(false);
@@ -38,20 +38,12 @@ const Nav = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-7 flex-1">
-            {navLinks.map((link) => {
-              return (
-                <div
-                  key={link.id}
-                  className={`cursor-pointer text-gray ${
-                    query.id === link.paramId || route === link.paramId
-                      ? "!text-primary"
-                      : ""
-                  } hover:text-primary-hover`}
-                >
-                  <Link href={link.url}>{link.title}</Link>
-                </div>
-              );
-            })}
+            <NavLinks
+              navLinks={navLinks}
+              query={query}
+              route={route}
+              setIsOpen={setIsOpen}
+            />
           </div>
         </div>
 
@@ -104,24 +96,13 @@ const Nav = () => {
       </nav>
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="flex flex-col gap-y-3 pt-4">
-          {navLinks.map((link) => {
-            return (
-              <div
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-                key={link.id}
-                className={`cursor-pointer text-gray flex w-full justify-between items-center ${
-                  query.id === link.paramId || route === link.paramId
-                    ? "!text-primary"
-                    : ""
-                } hover:text-primary-hover`}
-              >
-                <Link href={link.url}>{link.title}</Link>
-                <ChevronRightIcon className="w-5 h-6" />
-              </div>
-            );
-          })}
+          <NavLinks
+            col={true}
+            navLinks={navLinks}
+            query={query}
+            route={route}
+            setIsOpen={setIsOpen}
+          />
         </div>
       </Drawer>
     </>

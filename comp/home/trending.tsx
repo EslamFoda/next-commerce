@@ -1,5 +1,5 @@
 import Header from "../common/header";
-import ProdCard from "../common/prodCard";
+import ProdCard from "../mainCard";
 import Grid from "../ui/Grid";
 const Trending = ({ products }) => {
   const { storeProducts } = products;
@@ -11,11 +11,6 @@ const Trending = ({ products }) => {
           return (
             <ProdCard
               key={prod.id}
-              title={prod.title}
-              price={prod.price}
-              image={prod.image.url}
-              vendor={prod.vendor}
-              rate={prod.rate}
               prodImages={prod.prodImages}
               slug={prod.slug}
               type={prod.type}

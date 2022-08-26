@@ -16,7 +16,7 @@ export default function Drawer({ children, isOpen, setIsOpen }: DrawerProps) {
         onClose={() => setIsOpen(false)}
         className="fixed z-30 inset-0 overflow-y-auto"
       >
-        <div className="flex w-3/4 h-screen">
+        <div className="flex w-4/5 h-screen">
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-in duration-300"
@@ -41,12 +41,12 @@ export default function Drawer({ children, isOpen, setIsOpen }: DrawerProps) {
             <div
               className={`flex flex-col justify-between bg-white z-50
 
-                          w-full max-w-sm py-4 overflow-hidden text-left
+                          w-full max-w-sm  py-4 overflow-hidden text-left
 
                           align-middle shadow-xl `}
             >
               <div>
-                <div className="self-center px-6 pb-4 border-solid border-b cursor-pointer hover:text-primary-hover transition-all border-b-gray-border">
+                <div className="self-center lg:px-6 sm:px-6 px-2 pb-4 border-solid border-b cursor-pointer hover:text-primary-hover transition-all border-b-gray-border">
                   <span
                     className="flex items-center gap-2"
                     onClick={() => setIsOpen(!isOpen)}
@@ -54,7 +54,7 @@ export default function Drawer({ children, isOpen, setIsOpen }: DrawerProps) {
                     <XIcon className="w-3 h-3" /> Close
                   </span>
                 </div>
-                <div className="px-6">{children}</div>
+                <div className="lg:px-6 sm:px-6 px-2">{children}</div>
               </div>
             </div>
           </Transition.Child>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import ProdCard from "../../common/prodCard";
+import ProdCard from "../../mainCard";
 const MutationPlugin: KeenSliderPlugin = (slider) => {
   const observer = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
@@ -80,11 +80,6 @@ const KeenSlider = ({ data, title, type }) => {
               return (
                 <div key={i} className="keen-slider__slide">
                   <ProdCard
-                    title={prod.title}
-                    price={prod.price}
-                    image={prod?.image?.url}
-                    vendor={prod.vendor}
-                    rate={prod.rate}
                     prodImages={prod?.prodImages}
                     slug={prod.slug}
                     type={type}

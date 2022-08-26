@@ -4,10 +4,10 @@ import ViewProduct from "../../../comp/product-page";
 // import RecentlyView from "../../../comp/product-page/recentlyViewProd";
 // import RencentlyView from '../../../comp/product-page/recenltyViewd'
 import { useAppContext } from "../../../context/AppContext";
-import RelatedProducts from "../../../comp/product-page/relatedProducts";
-import CustomProducts from '../../../comp/product-page/customProducts'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import KeenSlider from "../../../comp/ui/keenSlider";
+
 const CollectionProduct = ({ product, allProd }) => {
   const { storeProducts } = product;
   const router = useRouter();
@@ -40,8 +40,8 @@ const CollectionProduct = ({ product, allProd }) => {
     <div className="mb-24">
       <Breadcrumb base="home" type={storeProducts[0]?.type} slug={storeProducts[0]?.slug} />
       <ViewProduct product={storeProducts[0]} />
-      <RelatedProducts related={related} />
-      <CustomProducts custom={custom}/>
+      <KeenSlider type='related' data={related} title="RELATED PRODUCTS" />
+      <KeenSlider type='vendor' data={custom} title="VENDOR PRODUCTS" />
     </div>
   );
 };

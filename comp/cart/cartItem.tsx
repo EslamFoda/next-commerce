@@ -47,20 +47,20 @@ const CartItem: React.FC<Props> = ({
                   setIsCartOpen(false);
                 }
               }}
-              className="text-sm mb-1 group-hover:text-primary-hover text-font-color"
+              className="lg:text-sm sm:text-sm text-xs  mb-1 group-hover:text-primary-hover text-font-color"
             >
               {title}
             </h2>
           </Link>
-          <h3 className="text-base text-font-color font-semibold">
-            <span className="text-gray text-sm">{quantity}x </span>${price}
+          <h3 className="lg:text-base sm:text-base text-sm text-font-color font-semibold">
+            <span className="text-gray lg:text-sm sm:text-sm text-xs">{quantity}x </span>${price}
             .00
           </h3>
         </div>
       </div>
       <div>
         <TrashIcon
-          className="w-5 h-5"
+          className="lg:w-5 lg:h-5 sm:w-5 sm:h-5 h-4 w-4"
           onClick={() => {
             dispatch({ type: "REMOVE_CART_ITEM", payload: id });
           }}
