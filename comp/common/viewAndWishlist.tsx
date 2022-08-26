@@ -30,12 +30,12 @@ const ViewAndWishlist = ({ prod, list = false }) => {
           <Tooltip className="-ml-1" placement="left-center" text="Quick View">
             <div
               onClick={openModal}
-              className="bg-white opacity-0 group-hover:opacity-100 cursor-pointer transition duration-300 hover:bg-blue-400  hover:text-white mb-3 h-10 w-10 rounded-full flex justify-center items-center"
+              className="bg-white lg:opacity-0 md:opacity-0 group-hover:opacity-100  cursor-pointer transition duration-300 hover:bg-blue-400  hover:text-white mb-3 g:h-10 md:w-10 sm:w-10 sm:h-10 h-7 w-7 rounded-full flex justify-center items-center"
             >
               <QuickView />
             </div>
           </Tooltip>
-          <div className="bg-white opacity-0 group-hover:opacity-100 cursor-pointer transition duration-300  hover:bg-blue-400 hover:text-white right-0 h-10 w-10 rounded-full flex justify-center items-center">
+          <div className="bg-white lg:opacity-0 md:opacity-0 group-hover:opacity-100 cursor-pointer transition duration-300  hover:bg-blue-400 hover:text-white right-0 lg:h-10 md:w-10 sm:w-10 sm:h-10 h-7 w-7 rounded-full flex justify-center items-center">
             <Wishlist />
           </div>
         </div>

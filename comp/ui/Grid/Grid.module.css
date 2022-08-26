@@ -3,7 +3,7 @@
 }
 
 .layoutA {
-  @apply grid-cols-2 gap-4 m-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2;
+  @apply grid-cols-2 lg:gap-4 md:gap-4 gap-2 m-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2;
 }
 
 .layoutB {
@@ -17,7 +17,7 @@
 }
 
 .layoutE {
-  @apply  grid-cols-1 lg:grid-cols-2 md:grid-cols-2 p-8 gap-8
+  @apply  grid-cols-1 lg:grid-cols-2 md:grid-cols-2 p-4 gap-8
 }
 
 .normal{

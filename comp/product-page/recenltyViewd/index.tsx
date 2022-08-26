@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ProdCard from "../../common/prodCard";
-import KeenSlider from "../../ui/keenSlider";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 const MutationPlugin = (slider) => {
@@ -47,7 +46,7 @@ const RecentlyView = ({ seenProducts }) => {
       <div>
         {" "}
         {seenProducts?.length ? (
-          <div className="p-8 relative">
+          <div className="p-4 relative">
             <div className="flex items-center justify-between my-9">
               <h1>related -rod</h1>
               <div>

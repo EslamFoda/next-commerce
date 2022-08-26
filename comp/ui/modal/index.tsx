@@ -45,7 +45,7 @@ const Modal: React.FC<Props> = ({
               >
                 <Dialog.Panel
                   style={{ maxWidth: maxWidth }}
-                  className={`w-full  transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all`}
+                  className={`w-full  transform   min-h-fit max-h-fit rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all`}
                 >
                   {children}
                 </Dialog.Panel>

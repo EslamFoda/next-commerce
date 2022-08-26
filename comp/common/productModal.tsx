@@ -5,11 +5,12 @@ import ProdDetails from "../product-page/prodDetails"
 import Grid from "../ui/Grid"
 
 const ProductModal = ({prod})=>{
+  console.log([prod,'asdasd'])
     return (
         <Grid style={{ padding: "0px " }} layout="E">
         <div className="relative h-96 w-full">
           <Image
-            src={prod.image.url}
+            src={prod.prodImages[0].url}
             objectFit="cover"
             objectPosition="center"
             layout="fill"

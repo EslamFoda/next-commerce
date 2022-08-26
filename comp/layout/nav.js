@@ -10,11 +10,18 @@ import { MenuIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import Drawer from "../ui/drawer";
 import { SearchIcon, CartIcon, UserIcon, SettingIcon } from "../icons";
 import { useState } from "react";
+import FilterSearch from "../common/filterSearch";
+import TopDrawer from "../ui/topDrawer";
 const Nav = () => {
   const { query, route } = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [modelOpen, setModalOpen] = useState(false);
   return (
     <>
+      <TopDrawer setIsOpen={setModalOpen} isOpen={modelOpen}>
+        <FilterSearch setModalOpen={setModalOpen} />
+      </TopDrawer>
       <nav className="flex justify-between items-center p-2 bg-white shadow-sm">
         <MenuIcon
           onClick={() => {
@@ -50,21 +57,43 @@ const Nav = () => {
 
         <div className={styles.right}>
           <Tooltip className="mt-3" placement="bottom-center" text="Search">
-            <span>
+            <span
+              onClick={() => {
+                setModalOpen(true);
+              }}
+            >
               <SearchIcon />
             </span>
           </Tooltip>
-          <Popover
-            button={
-              <Tooltip className="mt-3" placement="bottom-center" text="Cart">
-                <span className="block mt-1">
-                  <CartIcon />
-                </span>
-              </Tooltip>
-            }
+          <div className="lg:block hidden">
+            <Popover
+              button={
+                <Tooltip className="mt-3" placement="bottom-center" text="Cart">
+                  <span className="block mt-1">
+                    <CartIcon />
+                  </span>
+                </Tooltip>
+              }
+            >
+              <Cart />
+            </Popover>
+          </div>
+          {/* here is drawer cart */}
+          <Drawer setIsOpen={setIsCartOpen} isOpen={isCartOpen}>
+            <Cart setIsCartOpen={setIsCartOpen} />
+          </Drawer>
+          <div
+            onClick={() => {
+              setIsCartOpen(true);
+            }}
+            className="lg:hidden block"
           >
-            <Cart />
-          </Popover>
+            <Tooltip className="mt-3" placement="bottom-center" text="Cart">
+              <span className="block">
+                <CartIcon />
+              </span>
+            </Tooltip>
+          </div>
           <div className="hidden lg:block">
             <UserIcon />
           </div>

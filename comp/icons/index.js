@@ -94,7 +94,7 @@ export const QuickView = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-6 w-6"
+      className="lg:h-6 lg:w-6 md:h-6 md:w-6 sm:w-6 sm:h-6 h-4 w-4"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -118,7 +118,7 @@ export const Wishlist = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-6 w-6"
+      className="lg:h-6 lg:w-6 md:h-6 md:w-6 sm:w-6 sm:h-6 h-4 w-4"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useKeenSlider,KeenSliderPlugin } from "keen-slider/react";
+import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import ProdCard from "../../common/prodCard";
 const MutationPlugin: KeenSliderPlugin = (slider) => {
@@ -17,30 +17,34 @@ const MutationPlugin: KeenSliderPlugin = (slider) => {
     observer.disconnect();
   });
 };
-const KeenSlider = ({  data, title,type }) => {
+const KeenSlider = ({ data, title, type }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider({
-    initial: 0,
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
-    },
-    created() {
-      setLoaded(true);
-    },
-    breakpoints: {
-      "(min-width: 400px)": {
-        slides: { perView: 2, spacing: 5 },
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      initial: 0,
+      slideChanged(slider) {
+        setCurrentSlide(slider.track.details.rel);
       },
-      "(min-width: 1000px)": {
-        slides: { perView: 4, spacing: 10 },
+      created() {
+        setLoaded(true);
       },
+      breakpoints: {
+        "(min-width: 400px)": {
+          slides: { perView: 2, spacing: 5 },
+        },
+        "(min-width: 1000px)": {
+          slides: { perView: 4, spacing: 10 },
+        },
+      },
+      slides: { perView: 1.2, spacing: 5 },
     },
-  },[MutationPlugin]);
+    [MutationPlugin]
+  );
   return (
     <>
       {data?.length ? (
-        <div className="p-8 relative">
+        <div className="p-4 relative">
           <div className="flex items-center justify-between my-9">
             <h1 className="font-semibold">{title}</h1>
             <div>
@@ -72,7 +76,7 @@ const KeenSlider = ({  data, title,type }) => {
             style={{ position: "unset" }}
             className="keen-slider"
           >
-            {data?.map((prod,i) => {
+            {data?.map((prod, i) => {
               return (
                 <div key={i} className="keen-slider__slide">
                   <ProdCard
