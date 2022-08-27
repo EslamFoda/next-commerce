@@ -24,7 +24,7 @@ const Nav = () => {
         <FilterSearch setModalOpen={setModalOpen} />
       </TopDrawer>
       <Headroom>
-        <nav className="flex justify-between items-center p-2 bg-white shadow-sm">
+        <nav className="flex  shadow-lg justify-between items-center p-2 bg-white shadow-sm">
           <MenuIcon
             onClick={() => {
               setIsOpen(true);

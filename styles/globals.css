@@ -237,4 +237,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-
+.headroom {
+ 
+  z-index: 100 !important;
+}
