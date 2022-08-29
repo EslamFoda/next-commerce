@@ -8,23 +8,34 @@ import { navLinks } from "../../../constant";
 import { MenuIcon } from "@heroicons/react/solid";
 import Drawer from "../../ui/drawer";
 import { SearchIcon, CartIcon, UserIcon, SettingIcon } from "../../icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FilterSearch from "../../common/filterSearch";
 import TopDrawer from "../../ui/topDrawer";
 import NavLinks from "./navLinks";
 import Headroom from "react-headroom";
+import { useAppContext } from "../../../context/AppContext";
 const Nav = () => {
   const { query, route } = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [modelOpen, setModalOpen] = useState(false);
+  const { cart } = useAppContext();
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  useEffect(() => {
+    const initialValue = 0;
+    const price = cart.reduce(
+      (previousValue, currentValue) => previousValue + currentValue.quantity,
+      initialValue
+    );
+    setTotalQuantity(price);
+  }, [cart]);
   return (
     <>
       <TopDrawer setIsOpen={setModalOpen} isOpen={modelOpen}>
         <FilterSearch setModalOpen={setModalOpen} />
       </TopDrawer>
       <Headroom>
-        <nav className="flex  shadow-lg justify-between items-center p-2 bg-white shadow-sm">
+        <nav className="flex  shadow-lg justify-between items-center p-4 bg-white shadow-sm">
           <MenuIcon
             onClick={() => {
               setIsOpen(true);
@@ -67,8 +78,11 @@ const Nav = () => {
                     placement="bottom-center"
                     text="Cart"
                   >
-                    <span className="block mt-1">
+                    <span className="block relative mt-1">
                       <CartIcon />
+                      <div className="absolute -top-[8px] h-5 flex justify-center items-center rounded-full text-white w-5 bg-primary text-sm -right-[12px]">
+                        {totalQuantity}
+                      </div>
                     </span>
                   </Tooltip>
                 }
@@ -87,8 +101,11 @@ const Nav = () => {
               className="lg:hidden block"
             >
               <Tooltip className="mt-3" placement="bottom-center" text="Cart">
-                <span className="block">
+                <span className="block relative">
                   <CartIcon />
+                  <div className="absolute -top-[8px] h-5 flex justify-center items-center rounded-full text-white w-5 bg-primary text-sm -right-[12px]">
+                    {totalQuantity}
+                  </div>
                 </span>
               </Tooltip>
             </div>

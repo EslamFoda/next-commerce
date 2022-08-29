@@ -7,7 +7,7 @@ import Empty from "../shopping-cart/empty";
 const Cart = ({setIsCartOpen = undefined}) => {
   const { cart } = useAppContext();
   const [totalPrice, setTotalPrice] = useState(0);
-  console.log(cart,'asdadasd')
+
   useEffect(() => {
     const initialValue = 0;
     const price = cart.reduce(

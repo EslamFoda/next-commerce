@@ -1,6 +1,6 @@
 .control {
   @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-between w-[95%] flex-row
-      z-30  select-none ;
+      z-10  select-none ;
     height: 48px;
   }
   
