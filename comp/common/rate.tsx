@@ -6,13 +6,13 @@ interface Props {
 const Rate: React.FC<Props> = ({ rate = 0, size = 5 }) => {
   return (
     <div className="flex items-center">
-      {[...Array(5)].map((star, i) => {
+      {[...new Array(5)].map((_, i) => {
         let rateClass =
           i <= rate ? "text-yellow-400" : "text-gray-300 dark:text-gray-500";
         return (
           <svg
             key={i}
-            // className={`w-${size} h-${size} ${rateClass}`}
+            className={`w-${size} h-${size} ${rateClass}`}
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
