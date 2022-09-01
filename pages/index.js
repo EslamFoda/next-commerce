@@ -19,8 +19,8 @@ export default function Home({ trending, bestSeller }) {
       {/* <Hero /> */}
       {/* <Categories /> */}
       {/* <BestSeller products={bestSeller} /> */}
-      {/* <Deals />
-      <Trending products={trending} /> */}
+      <Deals />
+      {/* <Trending products={trending} /> */}
       <Blog />
       <FollowUs />
       <Services />
