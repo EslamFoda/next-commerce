@@ -35,7 +35,7 @@ const CollectionView = ({
           upperBound={upperBound}
         />
       </Drawer>
-      <div className="grid grid-cols-4 gap-5 h-screen p-4">
+      <div className="grid grid-cols-4 gap-5  p-4">
         <div className=" hidden lg:block">
           <div className="w-full px-4 pt-16">
             <Filter
