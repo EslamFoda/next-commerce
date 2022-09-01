@@ -12,7 +12,7 @@ const Trending = dynamic(() => import("../comp/home/trending"));
 export default function Home({ trending, bestSeller }) {
   return (
     <div>
-      <Head>
+      {/* <Head>
         <title>Wokiee - E-commerce</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
@@ -23,7 +23,7 @@ export default function Home({ trending, bestSeller }) {
       <Trending products={trending} />
       <Blog />
       <FollowUs />
-      <Services />
+      <Services /> */}
     </div>
   );
 }
