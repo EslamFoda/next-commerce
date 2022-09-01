@@ -11,7 +11,6 @@ const Trending = ({ products }) => {
           return (
             <div key={prod.id}>
               <ProdCard
-              list
                 prodImages={prod?.prodImages}
                 slug={prod.slug}
                 type={prod.type}
