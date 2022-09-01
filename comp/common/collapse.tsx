@@ -5,9 +5,15 @@ interface Props {
   title?: string;
   desc?: string;
   details?: boolean;
+  expanded?: boolean;
 }
-const Collapse: React.FC<Props> = ({ title, desc, details }) => {
-  const [isExpanded, setExpanded] = useState(false);
+const Collapse: React.FC<Props> = ({
+  title,
+  desc,
+  details,
+  expanded = false,
+}) => {
+  const [isExpanded, setExpanded] = useState(expanded);
   const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
   return (
     <>

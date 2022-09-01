@@ -2,9 +2,9 @@ import Image from "next/image";
 import { CartIcon } from "../icons";
 import Button from "../ui/Button";
 import ProdCardGallery from "../common/prodCardGallery";
-import Rate from "rc-rate";
 import ViewAndWishlist from "../common/viewAndWishlist";
-import "rc-rate/assets/index.css";
+import Rates from "../ui/Rate";
+
 const GridCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
   const { prodImages, vendor, rate, title, price } = prod;
   return (
@@ -27,7 +27,7 @@ const GridCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
           <span className="text-gray-500 transition-all hover:text-primary-hover text-sm">
             {vendor}
           </span>
-          <Rate  value={rate} count={5} allowClear={false} disabled={true}/>
+          <Rates rate={rate}  />
           <span
             onClick={pushTo}
             className="text-center transition-all hover:text-primary-hover cursor-pointer  text-sm"

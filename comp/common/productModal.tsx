@@ -10,7 +10,6 @@ const ProductModal = ({ prod }) => {
     <Grid style={{ padding: "0px " }} layout="E">
       <div className="relative h-96 w-full">
         <Image
-         
           alt="product image"
           src={prod.prodImages[0].url}
           objectFit="cover"
@@ -19,7 +18,11 @@ const ProductModal = ({ prod }) => {
         />
       </div>
       <div>
-        <ProdDetails title={prod?.title} price={prod?.price} />
+        <ProdDetails
+          rate={prod?.rate}
+          title={prod?.title}
+          price={prod?.price}
+        />
         <p className="text-gray text-sm">
           We are proud to present our best premium Shopify theme - Wokiee. This
           is multi-purpose software that can be used for any type of the store.
