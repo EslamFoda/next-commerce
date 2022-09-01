@@ -15,7 +15,7 @@ export default function Home({ trending, bestSeller }) {
       {/* <Head>
         <title>Wokiee - E-commerce</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      </Head> */}
       <Hero />
       <Categories />
       <BestSeller products={bestSeller} />
@@ -23,7 +23,7 @@ export default function Home({ trending, bestSeller }) {
       <Trending products={trending} />
       <Blog />
       <FollowUs />
-      <Services /> */}
+      <Services />
     </div>
   );
 }
