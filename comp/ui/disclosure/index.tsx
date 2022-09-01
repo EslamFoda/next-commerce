@@ -1,18 +1,19 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/solid";
-import { FC,ReactNode, Component } from "react";
+import { FC, ReactNode, Component } from "react";
 interface Props {
-    title:string
-    children?: ReactNode[] | Component[] | any[] | any;
+  title: string;
+  children?: ReactNode[] | Component[] | any[] | any;
+  defaultOpen?: boolean;
 }
-const MyDisclosure:FC<Props> = ({title,children}) => {
+const MyDisclosure: FC<Props> = ({ title, children, defaultOpen = true }) => {
   return (
-    <div className="mx-auto w-full max-w-md rounded-2xl bg-white">
-      <Disclosure defaultOpen>
+    <div className="mx-auto w-full max-w-lg rounded-2xl ">
+      <Disclosure defaultOpen={defaultOpen}>
         {({ open }) => (
           <>
             <Disclosure.Button className="flex w-full justify-between py-2 text-left text-sm font-medium text-font-color hover:text-primary-hover border-0 border-b border-gray-border border-solid">
-              <span>{title}</span>
+              <span className="text-base">{title}</span>
               {open ? (
                 <MinusIcon className="h-4 w-4" />
               ) : (
@@ -29,7 +30,7 @@ const MyDisclosure:FC<Props> = ({title,children}) => {
               leaveTo="transform -translate-y-6 opacity-0"
             >
               <Disclosure.Panel className=" pt-4 pb-2 text-sm leading-7 text-gray-500">
-                 {children}
+                {children}
               </Disclosure.Panel>
             </Transition>
           </>

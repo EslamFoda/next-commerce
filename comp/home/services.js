@@ -27,7 +27,7 @@ const Services = () => {
     <Grid layout='normal'  >
       {serviceData.map((service,i) => {
         return (
-          <div key={i} className="flex gap-6 lg:self-center lg:justify-self-center">
+          <div key={i} className="flex gap-6 ">
             <div>
               {service.icon}
             </div>

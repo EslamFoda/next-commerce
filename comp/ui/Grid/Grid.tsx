@@ -5,7 +5,7 @@ import s from "./Grid.module.css";
 interface GridProps {
   className?: string;
   children?: ReactNode[] | Component[] | any[] | any;
-  layout?: "A" | "B" | "C" | "D" | "E" | "normal" | 1 | 2 | 3 | 4 ;
+  layout?: "A" | "B" | "C" | "D" | "E" | "F" | "normal" | 1 | 2 | 3 | 4;
   el?: HTMLElement;
   style?: any;
 }
@@ -28,6 +28,7 @@ const Grid: FC<GridProps> = ({
       [s.layoutC]: layout === "C",
       [s.layoutD]: layout === "D",
       [s.layoutE]: layout === "E",
+      [s.layoutF]: layout === "F",
       [s.normal]: layout === "normal",
       [s.oneCol]: layout === 1,
       [s.twoCol]: layout === 2,

@@ -20,8 +20,12 @@
   @apply  grid-cols-1 lg:grid-cols-2 md:grid-cols-2 p-4 gap-8
 }
 
+.layoutF{
+  @apply grid-cols-2  gap-7 p-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2
+}
+
 .normal{
-  @apply p-10 grid-cols-1 lg:grid-cols-3 sm:grid-cols-2  gap-4 gap-y-12 
+  @apply py-10 px-4  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2  gap-4 gap-y-12 
 }
 .oneCol{
   @apply grid-cols-1 gap-5

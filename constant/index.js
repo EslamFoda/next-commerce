@@ -123,3 +123,27 @@ export const navLinks = [
     paramId: "Best-Seller",
   },
 ];
+
+export const social = [
+  { url: "/static/icons8-facebook-f.svg", id: 1, alt: "facebook icon" },
+  { url: "/static/icons8-google.svg", id: 2, alt: "google icon" },
+  { url: "/static/icons8-insta.svg", id: 3, alt: "instagram icon" },
+  { url: "/static/icons8-pinterest.svg", id: 4, alt: "pinterest icon" },
+  { url: "/static/icons8-twitter.svg", id: 5, alt: "twitter icon" },
+];
+export const socialBlack = [
+  { url: "/static/icons8-facebook-f-black.svg", id: 1, alt: "facebook icon" },
+  { url: "/static/icons8-google-black.svg", id: 2, alt: "google icon" },
+  { url: "/static/icons8-insta-black.svg", id: 3, alt: "instagram icon" },
+  { url: "/static/icons8-pinterest-black.svg", id: 4, alt: "pinterest icon" },
+  { url: "/static/icons8-twitter-black.svg", id: 5, alt: "twitter icon" },
+];
+
+
+export const payment = [
+  {url:"https://cdn.shopify.com/s/files/1/0130/5041/3114/files/paypal_new_x80.png?v=1606059743%202x",id:1},
+  {url:"https://cdn.shopify.com/s/files/1/0130/5041/3114/files/visa_2_x80.png?v=1606059933%202x",id:2},
+  {url:"https://cdn.shopify.com/s/files/1/0130/5041/3114/files/master_3_x80.png?v=1606059943%202x",id:3},
+  {url:"https://cdn.shopify.com/s/files/1/0130/5041/3114/files/apple_pay_4_x80.png?v=1606059953%202x",id:4},
+  {url:"https://cdn.shopify.com/s/files/1/0130/5041/3114/files/google_pay_5_x80.png?v=1606059963%202x",id:5},
+]
