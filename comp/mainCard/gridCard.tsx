@@ -32,14 +32,14 @@ const GridCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
           
           </div>
           <div className="lg:hidden md:hidden block group-hover:block ">
-            {/* <Button
+            <Button
               onClick={addToCart}
               icon={<CartIcon />}
               height={40}
               className="!p-4 text-xs"
             >
               ADD TO CART
-            </Button> */}
+            </Button>
           </div>
         </div>
       </div>
