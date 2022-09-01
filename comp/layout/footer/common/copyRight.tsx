@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { payment } from "../../../constant";
+import { payment } from "../../../../constant";
 
 const CopyRight = () => {
   return (

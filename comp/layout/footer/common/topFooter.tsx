@@ -1,5 +1,5 @@
 import FooterSocial from "./footerSocial";
-import { social } from "../../../constant";
+import { social } from "../../../../constant";
 const TopFooter = () => {
   return (
     <>

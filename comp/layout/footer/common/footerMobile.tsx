@@ -1,7 +1,7 @@
-import Button from "../../ui/Button";
-import MyDisclosure from "../../ui/disclosure";
+import Button from "../../../ui/Button";
+import MyDisclosure from "../../../ui/disclosure";
 import FooterSocial from "./footerSocial";
-import { socialBlack } from "../../../constant";
+import { socialBlack } from "../../../../constant";
 const FooterMobile = () => {
   return (
     <div className="block p-4 bg-[#f7f8fa] lg:hidden md:hidden">

@@ -1,4 +1,4 @@
-import Grid from "../../ui/Grid";
+import Grid from "../../../ui/Grid";
 
 const BottomFooter = () => {
   return (
