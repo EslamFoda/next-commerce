@@ -60,7 +60,7 @@ const ProdCard: React.FC<Props> = ({
       ) : (
         <GridCard
           prod={prod}
-          // pushTo={pushTo}
+          pushTo={pushTo}
           addToCart={addToCart}
           selectProd={selectProd}
           setSelectedProd={setSelectedProd}

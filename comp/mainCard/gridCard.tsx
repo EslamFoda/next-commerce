@@ -5,7 +5,7 @@ import ProdCardGallery from "../common/prodCardGallery";
 import Rate from "../common/rate";
 import ViewAndWishlist from "../common/viewAndWishlist";
 
-const GridCard = ({  selectProd, setSelectedProd, addToCart, prod }) => {
+const GridCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
   const { prodImages, vendor, rate, title, price } = prod;
   return (
     <>
@@ -13,8 +13,8 @@ const GridCard = ({  selectProd, setSelectedProd, addToCart, prod }) => {
       <div className="overflow-hidden group h-[450px] lg:h-[550px] md:h-[550px] sm:h-[550px]">
         <div className="top cursor-pointer  relative h-64 lg:h-96 md:h-96 sm:h-96">
           <Image
-            alt={"product image"}
-            // onClick={pushTo}
+            alt={"product"}
+            onClick={pushTo}
             // @ts-ignore
             src={selectProd ? selectProd : prodImages[0].url}
             layout="fill"
@@ -30,7 +30,7 @@ const GridCard = ({  selectProd, setSelectedProd, addToCart, prod }) => {
           <Rate rate={rate} />
 
           <span
-            // onClick={pushTo}
+            onClick={pushTo}
             className="text-center transition-all hover:text-primary-hover cursor-pointer  text-sm"
           >
             {title}
