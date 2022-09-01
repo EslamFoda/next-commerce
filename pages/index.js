@@ -16,10 +16,10 @@ export default function Home({ trending, bestSeller }) {
         <title>Wokiee - E-commerce</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      {/* <Hero /> */}
-      {/* <Categories /> */}
-      {/* <BestSeller products={bestSeller} /> */}
-      {/* <Deals /> */}
+      <Hero />
+      <Categories />
+      <BestSeller products={bestSeller} />
+      <Deals />
       <Trending products={trending} />
       <Blog />
       <FollowUs />

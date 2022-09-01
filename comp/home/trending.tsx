@@ -9,7 +9,15 @@ const Trending = ({ products }) => {
       <Grid>
         {storeProducts?.map((prod) => {
           return (
-           <>asdas</>
+            <div key={prod.id}>
+              <ProdCard
+                prodImages={prod.prodImages}
+                slug={prod.slug}
+                type={prod.type}
+                prod={prod}
+                id={prod.id}
+              />
+            </div>
           );
         })}
       </Grid>

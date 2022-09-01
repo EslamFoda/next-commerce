@@ -13,7 +13,6 @@ const GridCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
       <div className="overflow-hidden group h-[450px] lg:h-[550px] md:h-[550px] sm:h-[550px]">
         <div className="top cursor-pointer  relative h-64 lg:h-96 md:h-96 sm:h-96">
           <Image
-           
             alt={title}
             onClick={pushTo}
             // @ts-ignore

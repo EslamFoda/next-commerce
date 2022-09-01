@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useAppContext } from "../../context/AppContext";
-import ListCard from "./listCard";
-import GridCard from "./gridCard";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+
+const ListCard = dynamic(() => import("./listCard"));
+const GridCard = dynamic(() => import("./gridCard"));
+
 interface Props {
   prodImages?: any;
   slug?: string;
