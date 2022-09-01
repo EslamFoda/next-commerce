@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Counter from "./counter";
 import { TrashIcon } from "@heroicons/react/solid";
-import { useEffect, useState } from "react";
 import { useAppContext } from "../../context/AppContext";
 const CartProduct = ({ item, price, title, quantity, image }) => {
   const { dispatch } = useAppContext();
@@ -19,8 +18,9 @@ const CartProduct = ({ item, price, title, quantity, image }) => {
             className="image-cont relative h-[125px] w-[100px]"
           >
             <Image
+              priority={true}
+              alt={title}
               src={image.url}
-              alt="prod image"
               layout="fill"
               objectFit="cover"
             />

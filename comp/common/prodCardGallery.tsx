@@ -16,7 +16,8 @@ const ProdCardGallery = ({ selectProd, setSelectedProd, prodImages }) => {
             className="relative hover:outline-2 hover:outline hover:outline-blue-300  cursor-pointer h-10 w-10 rounded-md overflow-hidden"
           >
             <Image
-              loading="lazy"
+              priority={true}
+              alt="product image"
               src={prod?.url}
               layout="fill"
               objectFit="cover"

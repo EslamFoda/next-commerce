@@ -7,6 +7,7 @@ import { useAppContext } from "../../../context/AppContext";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import KeenSlider from "../../../comp/ui/keenSlider";
+import Head from "next/head";
 
 const CollectionProduct = ({ product, allProd }) => {
   const { storeProducts } = product;
@@ -28,21 +29,29 @@ const CollectionProduct = ({ product, allProd }) => {
       return storeProducts[0]?.productType === prod.productType;
     });
     setRelated(findType);
-   
   }, [storeProducts[0]]);
-  useEffect(()=>{
+  useEffect(() => {
     const customProd = allProd?.storeProducts?.filter((prod) => {
       return storeProducts[0]?.vendor === prod.vendor;
     });
     setCustom(customProd);
-  },[storeProducts[0]])
+  }, [storeProducts[0]]);
   return (
-    <div className="mb-24">
-      <Breadcrumb base="home" type={storeProducts[0]?.type} slug={storeProducts[0]?.slug} />
-      <ViewProduct product={storeProducts[0]} />
-      <KeenSlider type='related' data={related} title="RELATED PRODUCTS" />
-      <KeenSlider type='vendor' data={custom} title="VENDOR PRODUCTS" />
-    </div>
+    <>
+      <Head>
+        <title>{storeProducts[0]?.slug} - wokiee</title>
+      </Head>
+      <div className="mb-24">
+        <Breadcrumb
+          base="home"
+          type={storeProducts[0]?.type}
+          slug={storeProducts[0]?.slug}
+        />
+        <ViewProduct product={storeProducts[0]} />
+        <KeenSlider type="related" data={related} title="RELATED PRODUCTS" />
+        <KeenSlider type="vendor" data={custom} title="VENDOR PRODUCTS" />
+      </div>
+    </>
   );
 };
 

@@ -4,12 +4,13 @@ import CollectionView from "../../comp/collections/collectionView";
 import { getAllProd, getCollection, getProducts } from "../../services";
 import { useEffect, useState } from "react";
 import request from "graphql-request";
+import Head from "next/head";
 
 const Collection = ({ collection, trendingAndBestSellers, allProd }) => {
   const { query } = useRouter();
   const [productTypes, setProductTypes] = useState(null);
   const [storeTypes, setStoreTypes] = useState([]);
-  const [typeData,setTypeData] = useState(null)
+  const [typeData, setTypeData] = useState(null);
   useEffect(() => {
     let types = [];
     allProd?.storeProducts?.forEach((product) => {
@@ -58,6 +59,9 @@ const Collection = ({ collection, trendingAndBestSellers, allProd }) => {
 
   return (
     <>
+      <Head>
+        <title>{query.id} - wokiee</title>
+      </Head>
       <Breadcrumb base="home" type={query.id} />
       <CollectionView
         type={query.id}

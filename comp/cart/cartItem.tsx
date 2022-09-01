@@ -36,7 +36,7 @@ const CartItem: React.FC<Props> = ({
             }}
             className="relative w-[67px] h-20 left"
           >
-            <Image src={image} layout="fill" objectFit="cover" />
+            <Image priority={true} alt='product image' src={image} layout="fill" objectFit="cover" />
           </div>
         </Link>
         <div>

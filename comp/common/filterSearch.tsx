@@ -109,6 +109,7 @@ const FilterSearch = ({ setModalOpen }) => {
                             >
                               <Image
                                 src={product.prodImages[0].url}
+                                alt='product image'
                                 layout="fill"
                                 objectFit="cover"
                               />

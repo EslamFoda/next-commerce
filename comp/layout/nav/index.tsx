@@ -45,6 +45,7 @@ const Nav = () => {
           <div className="flex gap-6 items-center">
             <div className="relative w-[95px] h-[22px]">
               <Image
+                alt="logo"
                 src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/Logo_190x.png?v=1551529109%202x"
                 layout="fill"
               />

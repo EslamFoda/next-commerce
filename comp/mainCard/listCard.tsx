@@ -14,13 +14,14 @@ const ListCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
         <div className="flex flex-col lg:flex-row md:flex-row sm:flex-row  lg:gap-7 md:gap-7 sm:gap-7 gap-2">
           <div className="top cursor-pointer relative  h-[220px]   w-[167px]">
             <Image
+              priority={true}
+              alt={title}
               onClick={pushTo}
               // @ts-ignore
               src={selectProd ? selectProd : prodImages[0].url}
               layout="fill"
               objectFit="cover"
               // @ts-ignore
-              loading="lazy"
             />
           </div>
 

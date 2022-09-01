@@ -18,18 +18,26 @@ const Footer = () => {
         </div>
         <div className="flex items-center gap-4 justify-self-end ">
           <Image
+            alt="facebook icon"
             src="/static/icons8-facebook-f.svg"
             width={"20px"}
             height="20px"
           />
-          <Image src="/static/icons8-google.svg" width={"20px"} height="20px" />
-          <Image src="/static/icons8-insta.svg" width={"20px"} height="20px" />
           <Image
+            alt="google icon"
+            src="/static/icons8-google.svg"
+            width={"20px"}
+            height="20px"
+          />
+          <Image alt='instagram icon' src="/static/icons8-insta.svg" width={"20px"} height="20px" />
+          <Image
+            alt="pinterest icon"
             src="/static/icons8-pinterest.svg"
             width={"20px"}
             height="20px"
           />
           <Image
+            alt="twitter icon"
             src="/static/icons8-twitter.svg"
             width={"20px"}
             height="20px"

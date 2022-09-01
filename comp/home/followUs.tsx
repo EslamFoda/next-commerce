@@ -15,10 +15,11 @@ const FollowUs = () => {
               className="h-60 lg:h-56 sm:h-60 relative cursor-pointer group transition-all duration-700"
             >
               <Image
+                priority={true}
+                alt="follow us image"
                 src={link.image}
                 layout="fill"
                 objectFit="cover"
-                loading="lazy"
               />
               <div className="absolute opacity-0 flex top-0 right-0 w-full h-full group-hover:opacity-100 justify-center items-center bg-gray-800 bg-opacity-70 transition-all duration-300">
                 <InstaIcon />

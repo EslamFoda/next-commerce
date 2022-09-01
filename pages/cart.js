@@ -1,5 +1,6 @@
 import Breadcrumb from "../comp/ui/breadcrumb";
 import Header from "../comp/common/header";
+import Head from "next/head";
 import CartView from "../comp/shopping-cart/cartView";
 import { useAppContext } from "../context/AppContext";
 import { getCollection } from "../services";
@@ -10,6 +11,9 @@ const Cart = ({ men, women }) => {
   const { cart } = useAppContext();
   return (
     <>
+    <Head>
+    <title>Your Shopping Cart - wokiee</title>
+    </Head>
       <Breadcrumb base="Home" type="Your Shopping Cart" />
       {cart.length ? (
         <>
