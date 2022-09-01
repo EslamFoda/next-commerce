@@ -2,9 +2,9 @@ import Image from "next/image";
 import { CartIcon } from "../icons";
 import Button from "../ui/Button";
 import ProdCardGallery from "../common/prodCardGallery";
-import Rate from "../common/rate";
 import ViewAndWishlist from "../common/viewAndWishlist";
-
+import Rate from "rc-rate";
+import "rc-rate/assets/index.css";
 const ListCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
   const { prodImages, vendor, rate, title, price } = prod;
   return (
@@ -30,7 +30,7 @@ const ListCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
               {vendor}
             </span>
             <div className="my-1">
-              <Rate size={4} rate={rate} />
+            <Rate  value={rate} count={5} allowClear={false} disabled={true}/>
             </div>
             <span
               onClick={pushTo}
