@@ -17,8 +17,8 @@ export default function Home({ trending, bestSeller }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       {/* <Hero /> */}
-      <Categories />
-      <BestSeller products={bestSeller} />
+      {/* <Categories /> */}
+      {/* <BestSeller products={bestSeller} /> */}
       <Deals />
       <Trending products={trending} />
       <Blog />
