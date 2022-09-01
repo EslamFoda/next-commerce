@@ -58,13 +58,9 @@ const ProdCard: React.FC<Props> = ({
           setSelectedProd={setSelectedProd}
         />
       ) : (
-        <GridCard
-          prod={prod}
-          pushTo={pushTo}
-          addToCart={addToCart}
-          selectProd={selectProd}
-          setSelectedProd={setSelectedProd}
-        />
+       <div>
+        asdlkajsdlkajsldkalsd
+       </div>
       )}
     </>
   );
