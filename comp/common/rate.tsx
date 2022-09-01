@@ -7,7 +7,7 @@ const Rate: React.FC<Props> = ({ rate = 0, size = 5 }) => {
   return (
     <div className="flex items-center">
       {[...Array(5)].map((star, i) => {
-        let rateClass =
+        const rateClass =
           i <= rate ? "text-yellow-400" : "text-gray-300 dark:text-gray-500";
         return (
           <div key={i}>

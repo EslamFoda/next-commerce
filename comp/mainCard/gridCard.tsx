@@ -27,7 +27,7 @@ const GridCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
           <span className="text-gray-500 transition-all hover:text-primary-hover text-sm">
             {vendor}
           </span>
-          <Rate rate={rate} />
+          <Rate rate={4} />
           <span
             onClick={pushTo}
             className="text-center transition-all hover:text-primary-hover cursor-pointer  text-sm"
