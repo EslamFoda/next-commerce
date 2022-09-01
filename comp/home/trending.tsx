@@ -6,12 +6,12 @@ const Trending = ({ products }) => {
   return (
     <>
       <Header title="TRENDING" subTitle="TOP WISHES OF THIS WEEK" />
-      <Grid>
+      <Grid layout={"A"}>
         {storeProducts?.map((prod) => {
           return (
             <div key={prod.id}>
               <ProdCard
-                prodImages={prod.prodImages}
+                prodImages={prod?.prodImages}
                 slug={prod.slug}
                 type={prod.type}
                 prod={prod}
