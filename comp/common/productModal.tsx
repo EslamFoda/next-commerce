@@ -10,7 +10,7 @@ const ProductModal = ({ prod }) => {
     <Grid style={{ padding: "0px " }} layout="E">
       <div className="relative h-96 w-full">
         <Image
-          priority={true}
+         
           alt="product image"
           src={prod.prodImages[0].url}
           objectFit="cover"

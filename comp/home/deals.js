@@ -5,7 +5,7 @@ const Deals = () => {
     <Grid layout="B">
       <div className="h-80 relative group overflow-hidden cursor-pointer">
         <Image
-          priority={true}
+         
           alt="deal image"
           className="group-hover:scale-110 transition duration-700"
           src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/demo01_10_846x.jpg?v=1542298541%202"
@@ -21,7 +21,7 @@ const Deals = () => {
       </div>
       <div className="h-80 relative group overflow-hidden cursor-pointer">
         <Image
-          priority={true}
+        
           alt="deal image"
           className="group-hover:scale-110 transition duration-700"
           src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/demo01_11_846x.png?v=1542367627%202x"
@@ -35,7 +35,7 @@ const Deals = () => {
       </div>
       <div className="h-80 relative group overflow-hidden cursor-pointer">
         <Image
-          priority={true}
+        
           alt="deal image"
           className="group-hover:scale-110 transition duration-700"
           src="https://cdn.shopify.com/s/files/1/0130/5041/3114/files/demo01_09_846x.jpg?v=1542298541%202x"

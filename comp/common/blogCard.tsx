@@ -21,7 +21,7 @@ const BlogCard:React.FC<Props> =({ blog, i }) => {
   return (
     <div key={i} className="blogCard group">
       <div className="relative h-80 ">
-        <Image priority={true} alt={blog.title} className='group-hover:cursor-pointer' src={blog.image} layout="fill" objectFit="cover" />
+        <Image  alt={blog.title} className='group-hover:cursor-pointer' src={blog.image} layout="fill" objectFit="cover" />
         <div
           className="bg-white text-center rounded-md p-4 group-hover:p-7  group-hover:w-[95%]
        absolute top-full left-1/2 transform z-10 -translate-x-1/2 -translate-y-1/2 w-[90%] transition-all duration-300"

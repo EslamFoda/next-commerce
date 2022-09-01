@@ -18,7 +18,7 @@ const CartProduct = ({ item, price, title, quantity, image }) => {
             className="image-cont relative h-[125px] w-[100px]"
           >
             <Image
-              priority={true}
+            
               alt={title}
               src={image.url}
               layout="fill"
