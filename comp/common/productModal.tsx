@@ -28,7 +28,7 @@ const ProductModal = ({ prod }) => {
           is multi-purpose software that can be used for any type of the store.
           Great variety of available...
         </p>
-        <Counter product={prod} />
+        <Counter modal={true} product={prod} />
         <div className="mt-7">
           <ProductType product={prod} />
         </div>

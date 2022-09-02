@@ -13,6 +13,7 @@ import FilterSearch from "../../common/filterSearch";
 import TopDrawer from "../../ui/topDrawer";
 import NavLinks from "./navLinks";
 import Headroom from "react-headroom";
+import useCart from '../../../hooks/useCart'
 import { useAppContext } from "../../../context/AppContext";
 const Nav = () => {
   const { query, route } = useRouter();
@@ -20,15 +21,16 @@ const Nav = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [modelOpen, setModalOpen] = useState(false);
   const { cart } = useAppContext();
-  const [totalQuantity, setTotalQuantity] = useState(0);
-  useEffect(() => {
-    const initialValue = 0;
-    const price = cart.reduce(
-      (previousValue, currentValue) => previousValue + currentValue.quantity,
-      initialValue
-    );
-    setTotalQuantity(price);
-  }, [cart]);
+  // const [totalQuantity, setTotalQuantity] = useState(0);
+  const {totalQuantity} = useCart()
+  // useEffect(() => {
+  //   const initialValue = 0;
+  //   const price = cart.reduce(
+  //     (previousValue, currentValue) => previousValue + currentValue.quantity,
+  //     initialValue
+  //   );
+  //   setTotalQuantity(price);
+  // }, [cart]);
   return (
     <>
       <TopDrawer setIsOpen={setModalOpen} isOpen={modelOpen}>

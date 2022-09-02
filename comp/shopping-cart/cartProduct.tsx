@@ -18,7 +18,6 @@ const CartProduct = ({ item, price, title, quantity, image }) => {
             className="image-cont relative h-[125px] w-[100px]"
           >
             <Image
-            
               alt={title}
               src={image.url}
               layout="fill"
@@ -32,7 +31,7 @@ const CartProduct = ({ item, price, title, quantity, image }) => {
             <h3 className="">${price}.00</h3>
           </div>
         </div>
-
+    
         <h3 className="justify-self-center lg:block md:block sm:hidden hidden">
           ${price}.00
         </h3>

@@ -19,7 +19,7 @@ const CartView = ({ cart }) => {
         })}
       </div>
       {cart?.length ? <ContinueOrClear /> : null}
-      {cart?.length ? <CheckoutProcess cart={cart}/> : null}
+      {cart?.length ? <CheckoutProcess /> : null}
     </div>
   );
 };

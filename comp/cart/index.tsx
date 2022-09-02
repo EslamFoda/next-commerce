@@ -2,20 +2,9 @@ import CartItem from "./cartItem";
 import CartCheckout from "./cartCheckout";
 import { useAppContext } from "../../context/AppContext";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import Empty from "../shopping-cart/empty";
-const Cart = ({setIsCartOpen = undefined}) => {
+const Cart = ({ setIsCartOpen = undefined }) => {
   const { cart } = useAppContext();
-  const [totalPrice, setTotalPrice] = useState(0);
-
-  useEffect(() => {
-    const initialValue = 0;
-    const price = cart.reduce(
-      (previousValue, currentValue) => previousValue + currentValue.price,
-      initialValue
-    );
-    setTotalPrice(price);
-  }, [cart]);
 
   return (
     <>
@@ -45,7 +34,7 @@ const Cart = ({setIsCartOpen = undefined}) => {
               </Link>
             </div>
           )}
-          <CartCheckout total={totalPrice} />
+          <CartCheckout />
         </>
       ) : (
         <Empty emptyCart={true} />

@@ -2,20 +2,28 @@ import React from "react";
 import TermsAndConditions from "../product-page/termsAndCond";
 import Button from "../ui/Button";
 import Link from "next/link";
-interface Props {
-  total: number;
-}
-const CartCheckout: React.FC<Props> = ({ total }) => {
+import useCart from "../../hooks/useCart";
+
+const CartCheckout = () => {
+  
+  const { totalPrice } = useCart();
+
   return (
     <div className="checkout-contianer border-t-[1px] border-solid border-[#e9e7e7] border-0 py-2">
       <div className="total-container flex items-center justify-between">
-        <span className="text-font-color lg:text-sm sm:text-sm text-xs font-semibold">TOTAL:</span>
+        <span className="text-font-color lg:text-sm sm:text-sm text-xs font-semibold">
+          TOTAL:
+        </span>
         <span className="text-font-color] lg:text-base sm:text-base text-sm font-semibold">
-          ${total}.00
+          ${totalPrice}.00
         </span>
       </div>
       <TermsAndConditions fontSize="xs" />
-      <Button className="my-3 lg:text-base sm:text-base text-xs" height={40} full>
+      <Button
+        className="my-3 lg:text-base sm:text-base text-xs"
+        height={40}
+        full
+      >
         PROCEED TO CHECKOUT
       </Button>
       <div className="w-full text-center">

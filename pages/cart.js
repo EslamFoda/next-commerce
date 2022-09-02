@@ -11,9 +11,9 @@ const Cart = ({ men, women }) => {
   const { cart } = useAppContext();
   return (
     <>
-    <Head>
-    <title>Your Shopping Cart - wokiee</title>
-    </Head>
+      <Head>
+        <title>Your Shopping Cart - wokiee</title>
+      </Head>
       <Breadcrumb base="Home" type="Your Shopping Cart" />
       {cart.length ? (
         <>
