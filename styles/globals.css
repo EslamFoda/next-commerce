@@ -22,7 +22,7 @@
 .dot {
   border: none;
   width: 10px;
-  z-index: 565456456;
+  z-index: 2 !important;
   height: 10px;
   background: #c5c5c5;
   border-radius: 50%;
@@ -238,6 +238,5 @@ input[type=number] {
 }
 
 .headroom {
- 
-  z-index: 25 !important;
+  z-index: 10 !important;
 }

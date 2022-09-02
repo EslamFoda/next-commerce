@@ -12,7 +12,7 @@ const ViewAndWishlist = ({ prod, list = false }) => {
   return (
     <>
       {list ? (
-        <div className="z-10 flex gap-5 lg:self-end  md:self-end self-start ">
+        <div className=" flex gap-5 lg:self-end  md:self-end self-start ">
           <Tooltip className="-ml-1" placement="left-center" text="Quick View">
             <div
               onClick={openModal}
@@ -26,7 +26,7 @@ const ViewAndWishlist = ({ prod, list = false }) => {
           </div>
         </div>
       ) : (
-        <div className="z-10 absolute top-3 right-3">
+        <div className=" absolute top-3 right-3">
           <Tooltip className="-ml-1" placement="left-center" text="Quick View">
             <div
               onClick={openModal}
