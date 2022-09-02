@@ -8,29 +8,20 @@ import { navLinks } from "../../../constant";
 import { MenuIcon } from "@heroicons/react/solid";
 import Drawer from "../../ui/drawer";
 import { SearchIcon, CartIcon, UserIcon, SettingIcon } from "../../icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FilterSearch from "../../common/filterSearch";
 import TopDrawer from "../../ui/topDrawer";
 import NavLinks from "./navLinks";
 import Headroom from "react-headroom";
-import useCart from '../../../hooks/useCart'
-import { useAppContext } from "../../../context/AppContext";
+import useCart from "../../../hooks/useCart";
 const Nav = () => {
   const { query, route } = useRouter();
+ 
   const [isOpen, setIsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [modelOpen, setModalOpen] = useState(false);
-  const { cart } = useAppContext();
-  // const [totalQuantity, setTotalQuantity] = useState(0);
-  const {totalQuantity} = useCart()
-  // useEffect(() => {
-  //   const initialValue = 0;
-  //   const price = cart.reduce(
-  //     (previousValue, currentValue) => previousValue + currentValue.quantity,
-  //     initialValue
-  //   );
-  //   setTotalQuantity(price);
-  // }, [cart]);
+  const { totalQuantity } = useCart();
+
   return (
     <>
       <TopDrawer setIsOpen={setModalOpen} isOpen={modelOpen}>

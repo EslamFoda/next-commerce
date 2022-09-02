@@ -14,7 +14,7 @@ const NavLinks = ({ navLinks, setIsOpen, query, route, col = false }) => {
                 }}
                 key={link.id}
                 className={`cursor-pointer text-gray flex w-full justify-between items-center ${
-                  query.id === link.paramId || route === link.paramId
+                 !query.slug && ( query.id === link.paramId || route === link.paramId)
                     ? "!text-primary"
                     : ""
                 } hover:text-primary-hover`}
@@ -33,7 +33,7 @@ const NavLinks = ({ navLinks, setIsOpen, query, route, col = false }) => {
               <div
                 key={link.id}
                 className={`cursor-pointer text-gray ${
-                  query.id === link.paramId || route === link.paramId
+                  !query.slug && ( query.id === link.paramId || route === link.paramId)
                     ? "!text-primary"
                     : ""
                 } hover:text-primary-hover`}
