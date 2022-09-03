@@ -15,7 +15,6 @@ const FollowUs = () => {
               className="h-60 lg:h-56 sm:h-60 relative cursor-pointer group transition-all duration-700"
             >
               <Image
-               
                 alt="follow us image"
                 src={link.image}
                 layout="fill"

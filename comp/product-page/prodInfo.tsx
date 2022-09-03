@@ -12,10 +12,7 @@ const ProdInfo = ({ product }) => {
       <ProdDetails rate={product?.rate} price={product?.price} title={product?.title} />
       <Guides />
       <Counter product={product} />
-      <TermsAndConditions />
-      <Button variant="custom" full>
-        BUY IT NOW
-      </Button>
+      <TermsAndConditions singleProduct={true}/>
       <AddToWishlist />
       <ProductType product={product} />
       <div className="mt-8">

@@ -9,12 +9,19 @@
     font-size: 14px;
     border-radius: 8px;
 }
+.root:disabled {
+    opacity: .7;
+}
+
 .root svg {
     height: 18px;
     width: 18px;
   }
 .primary {
     color: white;
+    background-color: var(--primary);
+}
+.primary:disabled:hover{
     background-color: var(--primary);
 }
 .primary:hover{
@@ -56,5 +63,8 @@
 }
 .custom:hover{
     background: #dfc65d;
+}
+.custom:disabled:hover{
+    background: #f8dc68;
 }
 

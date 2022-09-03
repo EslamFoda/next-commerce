@@ -18,9 +18,6 @@ const SubTotal = () => {
         <h3 className="text-xl font-semibold text-primary">${totalPrice}.00</h3>
       </div>
       <TermsAndConditions />
-      <Button className="mt-4 lg:text-base sm:text-base text-xs" full>
-        PROCEED TO CHECKOUT
-      </Button>
     </div>
   );
 };

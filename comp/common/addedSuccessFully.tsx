@@ -52,9 +52,6 @@ const AddedSuccessFully = ({ setIsOpen, isOpen,addedProd }) => {
             VIEW CART
           </Button>
           <TermsAndConditions fontSize="xs" />
-          <Button full variant="primary">
-            PROCEED TO CHECKOUT
-          </Button>
         </div>
       </Grid>
     </Modal>
