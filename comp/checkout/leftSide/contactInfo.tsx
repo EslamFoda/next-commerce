@@ -1,7 +1,7 @@
-const ContactInfo = () => {
+const ContactInfo = ({ setEmail, email }) => {
   return (
     <>
-      <div className="flex mt-5 items-center justify-between">
+      <div className="flex mt-5 flex-wrap gap-2 items-center justify-between">
         <h2
           className="text-md text-font-color
          font-semibold"
@@ -13,6 +13,12 @@ const ContactInfo = () => {
         </span>
       </div>
       <input
+        value={email}
+        type="email"
+        required
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
         placeholder="Email or mobile phone number"
         className="w-full focus:bg-white my-3 focus:placeholder:text-white px-3 border border-solid border-gray-border  rounded-md h-10 focus:outline-none focus:border-primary-hover   text-gray"
       />

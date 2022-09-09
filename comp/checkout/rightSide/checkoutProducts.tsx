@@ -7,10 +7,17 @@ const CheckoutProducts = () => {
     <div>
       {cart.map((product) => {
         return (
-          <div className="flex mb-5 gap-y-4 items-center justify-between">
+          <div
+            key={product.id}
+            className="flex mb-5 gap-y-4 items-center justify-between"
+          >
             <div className="flex items-center gap-4">
               <div className="relative border border-solid border-gray-border  w-20 h-20">
-                <Image src={product.prodImages[0]?.url} layout="fill" />
+                <Image
+                  src={product.prodImages[0]?.url}
+                  layout="fill"
+                  alt="product image"
+                />
                 <div className="absolute -top-2 -right-2 text-white text-xs h-5 w-5 rounded-full bg-gray flex items-center justify-center">
                   {product.quantity}
                 </div>

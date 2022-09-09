@@ -1,4 +1,5 @@
-const ShippingAddress = () => {
+const ShippingAddress = ({setCountry,country,address,setAddress,apartment,setApartment,city,setCity}) => {
+  
   return (
     <div>
       <h2
@@ -9,6 +10,10 @@ const ShippingAddress = () => {
       </h2>
 
       <select
+        value={country}
+        onChange={(e) => {
+          setCountry(e.target.value);
+        }}
         className="block w-full focus:bg-white focus:placeholder:text-white px-3 border border-solid border-gray-border  rounded-md h-10 focus:outline-none focus:border-primary-hover bg-white  text-gray"
         name="cars"
         id="cars"
@@ -32,14 +37,26 @@ const ShippingAddress = () => {
         />
       </div>
       <input
+      value={address}
+        onChange={(e) => {
+          setAddress(e.target.value);
+        }}
         placeholder="Address"
         className="w-full focus:bg-white  focus:placeholder:text-white px-3 border border-solid border-gray-border  rounded-md h-10 focus:outline-none focus:border-primary-hover   text-gray"
       />
       <input
+        value={apartment}
+        onChange={(e) => {
+          setApartment(e.target.value);
+        }}
         placeholder="Appartment, suite, etc."
         className="w-full focus:bg-white my-3 focus:placeholder:text-white px-3 border border-solid border-gray-border  rounded-md h-10 focus:outline-none focus:border-primary-hover   text-gray"
       />
       <input
+        value={city}
+        onChange={(e) => {
+          setCity(e.target.value);
+        }}
         placeholder="City"
         className="w-full focus:bg-white focus:placeholder:text-white px-3 border border-solid border-gray-border  rounded-md h-10 focus:outline-none focus:border-primary-hover   text-gray"
       />
