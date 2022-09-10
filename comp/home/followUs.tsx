@@ -20,8 +20,11 @@ const FollowUs = () => {
                 layout="fill"
                 objectFit="cover"
               />
-              <div className="absolute opacity-0 flex top-0 right-0 w-full h-full group-hover:opacity-100 justify-center items-center bg-gray-800 bg-opacity-70 transition-all duration-300">
+              <div className="absolute opacity-0 z-10 flex top-0 right-0 w-full h-full group-hover:opacity-100 justify-center items-center bg-gray-800 bg-opacity-70 transition-all duration-300">
                 <InstaIcon />
+              </div>
+              <div className="absolute top-0 right-0 w-full h-full bg-black opacity-0 group-hover:opacity-50">
+
               </div>
             </div>
           );

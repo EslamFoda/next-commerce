@@ -5,10 +5,10 @@ import CopyRight from "./common/copyRight";
 const Footer = () => {
   return (
     <>
-     <TopFooter/>
-     <BottomFooter/>
-     <FooterMobile/>
-     <CopyRight/> 
+      <TopFooter />
+      <BottomFooter />
+      <FooterMobile />
+      <CopyRight />
     </>
   );
 };

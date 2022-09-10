@@ -23,7 +23,7 @@ const CopyRight = () => {
               key={pay.id}
               className="relative cursor-pointer h-[40px] w-[62px]"
             >
-              <Image alt='payment image' src={pay.url} layout="fill" />
+              <Image alt="payment image" src={pay.url} layout="fill" />
             </div>
           );
         })}

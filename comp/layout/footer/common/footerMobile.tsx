@@ -2,24 +2,19 @@ import Button from "../../../ui/Button";
 import MyDisclosure from "../../../ui/disclosure";
 import FooterSocial from "./footerSocial";
 import { socialBlack } from "../../../../constant";
+import FooterLinks from "./footerLinks";
+import ContactUs from "./contactUs";
 const FooterMobile = () => {
   return (
     <div className="block p-4 bg-[#f7f8fa] lg:hidden md:hidden">
       <MyDisclosure defaultOpen={false} title="CATEGORIES">
         <div className="flex flex-col gap-y-2">
-          <span className="text-sm font-sm text-gray">Women</span>
-          <span className="text-sm text-gray">Mens</span>
-          <span className="text-sm text-gray">Trending</span>
-          <span className="text-sm text-gray">Best Seller</span>
+          <FooterLinks />
         </div>
       </MyDisclosure>
       <MyDisclosure defaultOpen={false} title="BUY WITH US">
         <div className="flex flex-col gap-y-2">
-          <span className="text-sm text-gray">About Us</span>
-          <span className="text-sm text-gray">Services</span>
-          <span className="text-sm text-gray">Contact Us</span>
-          <span className="text-sm text-gray">FAQs</span>
-          <span className="text-sm text-gray">Privacy Policy</span>
+          <FooterLinks buyLink />
         </div>
       </MyDisclosure>
       <MyDisclosure defaultOpen={false} title="ABOUT">
@@ -34,25 +29,7 @@ const FooterMobile = () => {
         </div>
       </MyDisclosure>
       <MyDisclosure defaultOpen={false} title="CONTACT US">
-        <div className="flex flex-col gap-y-2">
-          <span className="text-font-color text-sm">
-            ADDRESS:{" "}
-            <span className="text-gray">
-              7895 Piermont Dr NE Albuquerque, NM 198866, United States of
-              America
-            </span>
-          </span>
-          <span className="text-font-color text-sm">
-            PHONE:{" "}
-            <span className="text-gray">+566 4774 9930; +566 4774 9940</span>
-          </span>
-          <span className="text-font-color text-sm">
-            HOURS: <span className="text-gray">all week from 9 am to 9 pm</span>
-          </span>
-          <span className="text-font-color text-sm">
-            E-MAIL: <span className="text-primary ">info@mydomain.com</span>
-          </span>
-        </div>
+        <ContactUs />
       </MyDisclosure>
       <MyDisclosure defaultOpen={false} title="BE IN TOUCH WITH US:">
         <div className="flex flex-col gap-y-2">

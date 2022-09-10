@@ -1,5 +1,5 @@
 import Image from "next/image";
-const FooterSocial = ({social}) => {
+const FooterSocial = ({ social }) => {
   return (
     <div className="flex  items-center gap-4 justify-self-end ">
       {social.map((icon) => {
