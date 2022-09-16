@@ -3,19 +3,19 @@ import { useAppContext } from "../../context/AppContext";
 const Counter = ({ item, quantity }) => {
   const { dispatch } = useAppContext();
   const decrement = () => {
-    console.log("clicked dec")
     if (quantity > 1) {
+      console.log(item.id);
       dispatch({
         type: "decrement",
-        payload: { id: item.id },
+        payload: item.id,
       });
     }
   };
   const increment = () => {
-    console.log("clicked increase")
+    console.log(item.id);
     dispatch({
       type: "increment",
-      payload: { id: item.id },
+      payload: item.id,
     });
   };
   return (
