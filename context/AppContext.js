@@ -33,7 +33,7 @@ export const seenProductsReducer = (state, action) => {
         ...state,
         cart: state.cart.map((item) => {
           if (item.id === action.payload) {
-            return { ...item, quantity: item.quantity++ };
+            return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
           }
@@ -44,7 +44,7 @@ export const seenProductsReducer = (state, action) => {
         ...state,
         cart: state.cart.map((item) => {
           if (item.id === action.payload && item.quantity >= 1) {
-            return { ...item, quantity: item.quantity-- };
+            return { ...item, quantity: item.quantity - 1 };
           } else {
             return item;
           }
