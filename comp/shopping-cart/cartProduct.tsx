@@ -27,16 +27,16 @@ const CartProduct = ({ item, price, title, quantity, image }) => {
           <h3 className="hidden lg:block md:block sm:hidden">{title}</h3>
           <div className="lg:hidden flex md:hidden sm:flex flex-col gap-y-3">
             <h3>{title}</h3>
-            <Counter dispatch={dispatch} item={item} quantity={quantity} />
+            <Counter item={item} quantity={quantity} />
             <h3>${price}.00</h3>
           </div>
         </div>
-    
+
         <h3 className="justify-self-center lg:block md:block sm:hidden hidden">
           ${price}.00
         </h3>
         <div className="justify-self-center lg:block md:block sm:hidden hidden">
-          <Counter dispatch={dispatch} item={item} quantity={quantity} />
+          <Counter item={item} quantity={quantity} />
         </div>
 
         <h3 className="justify-self-center lg:block md:block sm:hidden hidden">

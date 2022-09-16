@@ -1,4 +1,7 @@
-const Counter = ({ item, dispatch, quantity }) => {
+import { useAppContext } from "../../context/AppContext";
+
+const Counter = ({ item, quantity }) => {
+  const { dispatch } = useAppContext();
   const decrement = () => {
     if (quantity > 1) {
       dispatch({
