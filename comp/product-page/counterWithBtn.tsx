@@ -98,7 +98,7 @@ const CounterWithBtn: FC<Props> = ({ product, modal = false }) => {
 
         {modal ? (
           <Button
-            className={loading && added ? "bg-green-600" : ""}
+            className={loading && added ? "!bg-green-600" : ""}
             onClick={addToCart}
             full
             icon={<CartIcon />}

@@ -4,7 +4,6 @@ import Button from "../ui/Button";
 import ProdCardGallery from "../common/prodCardGallery";
 import ViewAndWishlist from "../common/viewAndWishlist";
 import Rates from "../ui/Rate";
-
 const GridCard = ({ pushTo, selectProd, setSelectedProd, addToCart, prod }) => {
   const { prodImages, vendor, rate, title, price } = prod;
   return (

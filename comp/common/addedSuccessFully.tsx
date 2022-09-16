@@ -1,13 +1,36 @@
 import { BadgeCheckIcon } from "@heroicons/react/outline";
 import Image from "next/image";
+import { FC } from "react";
 import useCart from "../../hooks/useCart";
 import TermsAndConditions from "../product-page/termsAndCond";
 import Button from "../ui/Button";
 import Grid from "../ui/Grid";
 import Modal from "../ui/modal";
 
-const AddedSuccessFully = ({ setIsOpen, isOpen,addedProd }) => {
-    const { totalPrice, totalQuantity } = useCart();
+interface AddedProd {
+  collection:string
+  id:string
+  image:any
+  price:number
+  prodImages:[] | any
+  productType:string
+  quantity:number
+  rate:number
+  slug:string
+  title:string
+  type:string
+  vendor:string
+}
+
+interface Pros {
+  isOpen:boolean
+  setIsOpen:any
+  addedProd:AddedProd
+}
+
+const AddedSuccessFully: FC<Pros> = ({ setIsOpen, isOpen, addedProd }) => {
+  const { totalPrice, totalQuantity } = useCart();
+  console.log(addedProd,'added')
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} maxWidth="768px">

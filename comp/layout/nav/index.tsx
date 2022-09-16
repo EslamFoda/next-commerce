@@ -7,20 +7,23 @@ import { useRouter } from "next/router";
 import { navLinks } from "../../../constant";
 import { MenuIcon } from "@heroicons/react/solid";
 import Drawer from "../../ui/drawer";
-import { SearchIcon, CartIcon, UserIcon, SettingIcon } from "../../icons";
+import { SearchIcon, CartIcon, UserIcon } from "../../icons";
 import { useState } from "react";
 import FilterSearch from "../../common/filterSearch";
 import TopDrawer from "../../ui/topDrawer";
 import NavLinks from "./navLinks";
 import Headroom from "react-headroom";
 import useCart from "../../../hooks/useCart";
+import { HeartIcon } from "@heroicons/react/outline";
+import useWishlist from "../../../hooks/useWishlist";
+
 const Nav = () => {
-  const { query, route } = useRouter();
- 
+  const { query, route, push } = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [modelOpen, setModalOpen] = useState(false);
   const { totalQuantity } = useCart();
+  const { fav } = useWishlist();
 
   return (
     <>
@@ -28,7 +31,7 @@ const Nav = () => {
         <FilterSearch setModalOpen={setModalOpen} />
       </TopDrawer>
       <Headroom>
-        <nav className="flex  shadow-lg justify-between items-center p-4 bg-white shadow-sm">
+        <nav className="flex justify-between items-center p-4 bg-white shadow-sm">
           <MenuIcon
             onClick={() => {
               setIsOpen(true);
@@ -106,8 +109,24 @@ const Nav = () => {
             <div className="hidden lg:block">
               <UserIcon />
             </div>
-            <div className="hidden lg:block">
-              <SettingIcon />
+            <div>
+              <Tooltip
+                className="mt-3"
+                placement="bottom-center"
+                text="Wishlist"
+              >
+                <span className="block relative">
+                  <HeartIcon
+                    onClick={() => {
+                      push("/wishlist");
+                    }}
+                    className="w-4 h-4"
+                  />
+                  <div className="absolute -top-[8px] h-5 flex justify-center items-center rounded-full text-white w-5 bg-primary text-sm -right-[12px]">
+                    {fav}
+                  </div>
+                </span>
+              </Tooltip>
             </div>
           </div>
         </nav>

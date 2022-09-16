@@ -13,7 +13,7 @@ const ProdInfo = ({ product }) => {
       <Guides />
       <Counter product={product} />
       <TermsAndConditions singleProduct={true}/>
-      <AddToWishlist />
+      <AddToWishlist product={product}/>
       <ProductType product={product} />
       <div className="mt-8">
         <Collapse

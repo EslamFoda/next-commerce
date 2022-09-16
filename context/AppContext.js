@@ -4,28 +4,34 @@ export const AppContext = createContext();
 // let uniqueChars = [...new Set(chars)];
 export const seenProductsReducer = (state, action) => {
   switch (action.type) {
-    case "SET_SEEN":
+    case "ADD_TO_WISHLIST":
       return {
-        seenProducts: [...state.seenProducts, action.payload],
+        ...state,
+        wishlist: [...state.wishlist, action.payload],
       };
-    // case "REMOVE_DUBLICATES":
-    //   return {
-    //     seenProducts : action.payload
-    //   }
+    case "REMOVE_WISHLIST_ITEM":
+      return {
+        ...state,
+        wishlist: state.wishlist.filter((item) => item.id !== action.payload),
+      };
     case "ADD_TO_CART":
       return {
+        ...state,
         cart: [action.payload, ...state.cart],
       };
     case "CLEAR_CART":
       return {
+        ...state,
         cart: [],
       };
     case "REMOVE_CART_ITEM":
       return {
+        ...state,
         cart: state.cart.filter((item) => item.id !== action.payload),
       };
     case "increment":
       return {
+        ...state,
         cart: state.cart.map((item) => {
           if (item.id === action.payload.id) {
             return { ...item, quantity: item.quantity++ };
@@ -36,6 +42,7 @@ export const seenProductsReducer = (state, action) => {
       };
     case "decrement":
       return {
+        ...state,
         cart: state.cart.map((item) => {
           if (item.id === action.payload.id && item.quantity >= 1) {
             return { ...item, quantity: item.quantity-- };
@@ -63,6 +70,7 @@ export function AppWrapper({ children }) {
   const [state, dispatch] = useReducer(seenProductsReducer, {
     seenProducts: [],
     cart: [],
+    wishlist: [],
   });
 
   return (

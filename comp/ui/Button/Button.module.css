@@ -50,6 +50,8 @@
 .secondary {
     background-color: white;
     color: black;
+    opacity: .9;
+    font-weight: 600;
 }
 .secondary:hover{
     background-color: var(--primary);
