@@ -30,7 +30,6 @@ interface Pros {
 
 const AddedSuccessFully: FC<Pros> = ({ setIsOpen, isOpen, addedProd }) => {
   const { totalPrice, totalQuantity } = useCart();
-  console.log(addedProd,'added')
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} maxWidth="768px">

@@ -46,7 +46,6 @@ const FilterSearch = ({ setModalOpen }) => {
               }
             `
       );
-      console.log(storeProducts, "asdads");
       setAllProducts(storeProducts);
     };
 
@@ -109,7 +108,7 @@ const FilterSearch = ({ setModalOpen }) => {
                             >
                               <Image
                                 src={product.prodImages[0].url}
-                                alt='product image'
+                                alt="product image"
                                 layout="fill"
                                 objectFit="cover"
                               />

@@ -40,10 +40,8 @@ export default function Drawer({ children, isOpen, setIsOpen }: DrawerProps) {
           >
             <div
               className={`flex flex-col justify-between bg-white z-50
-
                           w-full max-w-sm  py-4 overflow-hidden text-left
-
-                          align-middle shadow-xl `}
+                          align-middle shadow-xl`}
             >
               <div>
                 <div className="self-center lg:px-6 sm:px-6 px-2 pb-4 border-solid border-b cursor-pointer hover:text-primary-hover transition-all border-b-gray-border">

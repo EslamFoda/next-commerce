@@ -1,7 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 export const AppContext = createContext();
-// let chars = ['A', 'B', 'A', 'C', 'B'];
-// let uniqueChars = [...new Set(chars)];
+
 export const seenProductsReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_WISHLIST":
@@ -51,16 +50,6 @@ export const seenProductsReducer = (state, action) => {
           }
         }),
       };
-    // case "UPDATE_CART_ITEM":
-    //   return {
-    //     cart: state.cart.map((item) => {
-    //       if (item.id === action.payload.id) {
-    //         return { ...item, quantity: action.payload.quantity };
-    //       } else {
-    //         return item;
-    //       }
-    //     }),
-    //   };
     default:
       return state;
   }
