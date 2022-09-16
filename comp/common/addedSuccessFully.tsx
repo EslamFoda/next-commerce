@@ -1,36 +1,36 @@
 import { BadgeCheckIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { FC } from "react";
+import { useRouter } from "next/router";
 import useCart from "../../hooks/useCart";
 import TermsAndConditions from "../product-page/termsAndCond";
 import Button from "../ui/Button";
 import Grid from "../ui/Grid";
 import Modal from "../ui/modal";
-
 interface AddedProd {
-  collection:string
-  id:string
-  image:any
-  price:number
-  prodImages:[] | any
-  productType:string
-  quantity:number
-  rate:number
-  slug:string
-  title:string
-  type:string
-  vendor:string
+  collection: string;
+  id: string;
+  image: any;
+  price: number;
+  prodImages: [] | any;
+  productType: string;
+  quantity: number;
+  rate: number;
+  slug: string;
+  title: string;
+  type: string;
+  vendor: string;
 }
 
 interface Pros {
-  isOpen:boolean
-  setIsOpen:any
-  addedProd:AddedProd
+  isOpen: boolean;
+  setIsOpen: any;
+  addedProd: AddedProd;
 }
 
 const AddedSuccessFully: FC<Pros> = ({ setIsOpen, isOpen, addedProd }) => {
   const { totalPrice, totalQuantity } = useCart();
-
+  const { push } = useRouter();
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} maxWidth="768px">
       <Grid layout="E">
@@ -67,10 +67,14 @@ const AddedSuccessFully: FC<Pros> = ({ setIsOpen, isOpen, addedProd }) => {
               ${totalPrice}.00
             </span>
           </span>
-          <Button full variant="outline">
+          <Button
+            onClick={() => push("/collections/Mens")}
+            full
+            variant="outline"
+          >
             CONTINUE SHOPPING
           </Button>
-          <Button full variant="outline">
+          <Button onClick={() => push("/cart")} full variant="outline">
             VIEW CART
           </Button>
           <TermsAndConditions fontSize="xs" />
